@@ -43,6 +43,7 @@
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Creado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userEstadoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUSUARIOS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbUsuarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaLaConquistaDataSet)).BeginInit();
@@ -53,10 +54,9 @@
             this.BTNSALIRUSUARIO.BackColor = System.Drawing.Color.Black;
             this.BTNSALIRUSUARIO.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTNSALIRUSUARIO.ForeColor = System.Drawing.Color.White;
-            this.BTNSALIRUSUARIO.Location = new System.Drawing.Point(487, 382);
-            this.BTNSALIRUSUARIO.Margin = new System.Windows.Forms.Padding(4);
+            this.BTNSALIRUSUARIO.Location = new System.Drawing.Point(424, 338);
             this.BTNSALIRUSUARIO.Name = "BTNSALIRUSUARIO";
-            this.BTNSALIRUSUARIO.Size = new System.Drawing.Size(133, 39);
+            this.BTNSALIRUSUARIO.Size = new System.Drawing.Size(100, 32);
             this.BTNSALIRUSUARIO.TabIndex = 9;
             this.BTNSALIRUSUARIO.Text = "SALIR";
             this.BTNSALIRUSUARIO.UseVisualStyleBackColor = false;
@@ -66,10 +66,9 @@
             this.BTNINGRESARUSUARIO.BackColor = System.Drawing.Color.Black;
             this.BTNINGRESARUSUARIO.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTNINGRESARUSUARIO.ForeColor = System.Drawing.Color.White;
-            this.BTNINGRESARUSUARIO.Location = new System.Drawing.Point(68, 382);
-            this.BTNINGRESARUSUARIO.Margin = new System.Windows.Forms.Padding(4);
+            this.BTNINGRESARUSUARIO.Location = new System.Drawing.Point(110, 338);
             this.BTNINGRESARUSUARIO.Name = "BTNINGRESARUSUARIO";
-            this.BTNINGRESARUSUARIO.Size = new System.Drawing.Size(133, 39);
+            this.BTNINGRESARUSUARIO.Size = new System.Drawing.Size(100, 32);
             this.BTNINGRESARUSUARIO.TabIndex = 8;
             this.BTNINGRESARUSUARIO.Text = "INGRESAR";
             this.BTNINGRESARUSUARIO.UseVisualStyleBackColor = false;
@@ -79,10 +78,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Ink Free", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(197, 42);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(213, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(257, 25);
+            this.label1.Size = new System.Drawing.Size(208, 20);
             this.label1.TabIndex = 7;
             this.label1.Text = "LISTADO DE USUARIOS";
             // 
@@ -95,15 +93,17 @@
             this.Nombre,
             this.Apellido,
             this.Usuario,
-            this.Creado});
+            this.Creado,
+            this.userEstadoDataGridViewCheckBoxColumn});
             this.dataGridViewUSUARIOS.DataSource = this.tbUsuarioBindingSource;
-            this.dataGridViewUSUARIOS.Location = new System.Drawing.Point(68, 70);
+            this.dataGridViewUSUARIOS.Location = new System.Drawing.Point(99, 73);
+            this.dataGridViewUSUARIOS.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewUSUARIOS.MultiSelect = false;
             this.dataGridViewUSUARIOS.Name = "dataGridViewUSUARIOS";
             this.dataGridViewUSUARIOS.ReadOnly = true;
             this.dataGridViewUSUARIOS.RowTemplate.Height = 24;
             this.dataGridViewUSUARIOS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewUSUARIOS.Size = new System.Drawing.Size(552, 292);
+            this.dataGridViewUSUARIOS.Size = new System.Drawing.Size(443, 228);
             this.dataGridViewUSUARIOS.TabIndex = 10;
             this.dataGridViewUSUARIOS.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUSUARIOS_CellContentClick_1);
             // 
@@ -126,10 +126,9 @@
             this.btnEditar.BackColor = System.Drawing.Color.Black;
             this.btnEditar.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(209, 382);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditar.Location = new System.Drawing.Point(216, 338);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(133, 39);
+            this.btnEditar.Size = new System.Drawing.Size(100, 32);
             this.btnEditar.TabIndex = 11;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -140,10 +139,9 @@
             this.button1.BackColor = System.Drawing.Color.Black;
             this.button1.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(350, 382);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(321, 338);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 39);
+            this.button1.Size = new System.Drawing.Size(100, 32);
             this.button1.TabIndex = 12;
             this.button1.Text = "Eliminar";
             this.button1.UseVisualStyleBackColor = false;
@@ -185,19 +183,26 @@
             this.Creado.Name = "Creado";
             this.Creado.ReadOnly = true;
             // 
+            // userEstadoDataGridViewCheckBoxColumn
+            // 
+            this.userEstadoDataGridViewCheckBoxColumn.DataPropertyName = "user_Estado";
+            this.userEstadoDataGridViewCheckBoxColumn.HeaderText = "user_Estado";
+            this.userEstadoDataGridViewCheckBoxColumn.Name = "userEstadoDataGridViewCheckBoxColumn";
+            this.userEstadoDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.userEstadoDataGridViewCheckBoxColumn.Visible = false;
+            // 
             // ListadoUsuarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Goldenrod;
-            this.ClientSize = new System.Drawing.Size(684, 462);
+            this.ClientSize = new System.Drawing.Size(641, 418);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.dataGridViewUSUARIOS);
             this.Controls.Add(this.BTNSALIRUSUARIO);
             this.Controls.Add(this.BTNINGRESARUSUARIO);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ListadoUsuarios";
             this.Text = "ListadoUsuarios";
             this.Load += new System.EventHandler(this.ListadoUsuarios_Load);
@@ -225,5 +230,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Creado;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn userEstadoDataGridViewCheckBoxColumn;
     }
 }

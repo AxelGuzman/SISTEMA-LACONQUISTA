@@ -47,14 +47,14 @@ namespace LaConquista_WF
                 {
                     var lst = from obj in model.tbUsuario
                               select obj;
-                    //var lst1 = lst.Select(b => new tbUsuario
+                    //var lst1 = lst.select(b => new tbusuario
                     //{
-                    //    user_IdUsuario = b.user_IdUsuario,
-                    //    user_Nombre = b.user_Nombre,
-                    //    user_Apellido = b.user_Apellido,
-                    //    user_FechaCreacion = b.user_FechaCreacion,
-                    //    user_Estado = b.user_Estado
-                    //}).ToList();
+                    //    user_idusuario = b.user_idusuario,
+                    //    user_nombre = b.user_nombre,
+                    //    user_apellido = b.user_apellido,
+                    //    user_fechacreacion = b.user_fechacreacion,
+                    //    user_estado = b.user_estado
+                    //}).tolist();
                     dataGridViewUSUARIOS.DataSource = lst.ToList();
 
                 }

@@ -128,6 +128,7 @@
       <DependentUpon>ListadoDeProveedores.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Utilidades.cs" />
+    <Compile Include="Models\Parciales\Proveedores\listProveedores.cs" />
     <Compile Include="Models\SistemaLaConquistaModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -220,6 +221,7 @@
       <DependentUpon>SistemaLaConquistaModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\LaConquista_WF.Models.Parciales.Proveedores.listProveedores.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

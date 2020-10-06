@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LaConquista_WF.Formularios.Proveedores;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -40,7 +41,7 @@ namespace LaConquista_WF
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ListadoUsuarios lst = new ListadoUsuarios();
+            ListadoDeProveedores lst = new ListadoDeProveedores();
             this.Hide();
             lst.Show();
             
