@@ -17,7 +17,7 @@ namespace LaConquista_WF.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tbProducto()
         {
-            this.tbDetallleFactura = new HashSet<tbDetallleFactura>();
+            this.tbDetalleFactura = new HashSet<tbDetalleFactura>();
         }
     
         public int produ_IdProducto { get; set; }
@@ -25,9 +25,9 @@ namespace LaConquista_WF.Models
         public Nullable<int> prove_IdProveedor { get; set; }
         public string produ_Codigo { get; set; }
         public string produ_Descripcion { get; set; }
-        public string produ_PrecioCompra { get; set; }
-        public string produ_PrecioVenta { get; set; }
-        public Nullable<int> produ_Cantidad { get; set; }
+        public Nullable<decimal> produ_PrecioCompra { get; set; }
+        public Nullable<decimal> produ_PrecioVenta { get; set; }
+        public Nullable<decimal> produ_Cantidad { get; set; }
         public string produ_Categoria { get; set; }
         public byte[] produ_Imagen { get; set; }
         public string produ_FormatoImagen { get; set; }
@@ -39,7 +39,7 @@ namespace LaConquista_WF.Models
     
         public virtual tbCatalogoProductos tbCatalogoProductos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbDetallleFactura> tbDetallleFactura { get; set; }
+        public virtual ICollection<tbDetalleFactura> tbDetalleFactura { get; set; }
         public virtual tbProveedor tbProveedor { get; set; }
         public virtual tbUsuario tbUsuario { get; set; }
         public virtual tbUsuario tbUsuario1 { get; set; }

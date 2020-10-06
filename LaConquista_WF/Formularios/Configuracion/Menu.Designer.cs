@@ -52,6 +52,7 @@
             this.btncliente.Text = "CLIENTE";
             this.btncliente.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btncliente.UseVisualStyleBackColor = false;
+            this.btncliente.Click += new System.EventHandler(this.btncliente_Click);
             // 
             // btnproducto
             // 
@@ -66,6 +67,7 @@
             this.btnproducto.Text = "PRODUCTO";
             this.btnproducto.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnproducto.UseVisualStyleBackColor = false;
+            this.btnproducto.Click += new System.EventHandler(this.btnproducto_Click);
             // 
             // btnfactura
             // 
@@ -80,6 +82,7 @@
             this.btnfactura.Text = "FACTURA";
             this.btnfactura.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnfactura.UseVisualStyleBackColor = false;
+            this.btnfactura.Click += new System.EventHandler(this.btnfactura_Click);
             // 
             // btninventario
             // 
@@ -94,6 +97,7 @@
             this.btninventario.Text = "INVENTARIO";
             this.btninventario.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btninventario.UseVisualStyleBackColor = false;
+            this.btninventario.Click += new System.EventHandler(this.btninventario_Click);
             // 
             // btnreporte
             // 
@@ -136,6 +140,7 @@
             this.btnsalir.Text = "SALIR";
             this.btnsalir.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnsalir.UseVisualStyleBackColor = false;
+            this.btnsalir.Click += new System.EventHandler(this.btnsalir_Click);
             // 
             // label1
             // 

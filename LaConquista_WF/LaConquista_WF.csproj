@@ -128,6 +128,9 @@
       <DependentUpon>ListadoDeProveedores.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Utilidades.cs" />
+    <Compile Include="Models\ListCategoriaViewModels.cs" />
+    <Compile Include="Models\ListClienteViewModels.cs" />
+    <Compile Include="Models\ListProductoViewModels.cs" />
     <Compile Include="Models\SistemaLaConquistaModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -149,7 +152,7 @@
     <Compile Include="Models\tbCliente.cs">
       <DependentUpon>SistemaLaConquistaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\tbDetallleFactura.cs">
+    <Compile Include="Models\tbDetalleFactura.cs">
       <DependentUpon>SistemaLaConquistaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tbEncabezadoFactura.cs">

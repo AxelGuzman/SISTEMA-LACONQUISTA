@@ -5,13 +5,13 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="dca2a6d2fd8b4319ac41746a69430406" Name="Diagram1" ZoomLevel="82">
-        <EntityTypeShape EntityType="SistemaLaConquistaModel.tbCatalogoProductos" Width="1.5" PointX="5.25" PointY="11.25" />
-        <EntityTypeShape EntityType="SistemaLaConquistaModel.tbCliente" Width="1.5" PointX="3" PointY="4.625" />
-        <EntityTypeShape EntityType="SistemaLaConquistaModel.tbDetallleFactura" Width="1.5" PointX="9.75" PointY="7.75" />
-        <EntityTypeShape EntityType="SistemaLaConquistaModel.tbEncabezadoFactura" Width="1.5" PointX="5.25" PointY="5.875" />
-        <EntityTypeShape EntityType="SistemaLaConquistaModel.tbProducto" Width="1.5" PointX="7.5" PointY="9.375" />
-        <EntityTypeShape EntityType="SistemaLaConquistaModel.tbProveedor" Width="1.5" PointX="3" PointY="13.375" />
-        <EntityTypeShape EntityType="SistemaLaConquistaModel.tbUsuario" Width="1.5" PointX="0.75" PointY="6.625" />
+        <EntityTypeShape EntityType="SistemaLaConquistaModel.tbCatalogoProductos" Width="1.5" PointX="5.25" PointY="6.375" />
+        <EntityTypeShape EntityType="SistemaLaConquistaModel.tbCliente" Width="1.5" PointX="3" PointY="13.5" />
+        <EntityTypeShape EntityType="SistemaLaConquistaModel.tbDetalleFactura" Width="1.5" PointX="9.75" PointY="8" />
+        <EntityTypeShape EntityType="SistemaLaConquistaModel.tbEncabezadoFactura" Width="1.5" PointX="5.25" PointY="10.75" />
+        <EntityTypeShape EntityType="SistemaLaConquistaModel.tbProducto" Width="1.5" PointX="7.5" PointY="5.5" />
+        <EntityTypeShape EntityType="SistemaLaConquistaModel.tbProveedor" Width="1.5" PointX="3" PointY="4.75" />
+        <EntityTypeShape EntityType="SistemaLaConquistaModel.tbUsuario" Width="1.5" PointX="0.75" PointY="6.75" />
         <AssociationConnector Association="SistemaLaConquistaModel.FK_tbCatalogoProductos_tbProducto_cprod_Id" />
         <AssociationConnector Association="SistemaLaConquistaModel.FK_tbProveedor_tbCatalogoProductos_prove_IdProveedor" />
         <AssociationConnector Association="SistemaLaConquistaModel.FK_tbUsuarios_tbCatalogoProductos_UsuarioCrea" />
@@ -19,10 +19,11 @@
         <AssociationConnector Association="SistemaLaConquistaModel.FK_tbCliente_tbEncabezadoFactura_clint_IdCliente" />
         <AssociationConnector Association="SistemaLaConquistaModel.FK_tbUsuarios_tbCliente_UsuarioCrea" />
         <AssociationConnector Association="SistemaLaConquistaModel.FK_tbUsuarios_tbCliente_UsuarioModifica" />
+        <AssociationConnector Association="SistemaLaConquistaModel.FK_tbEncabezadoFactura_tbDetalleFactura_fact_Id" />
         <AssociationConnector Association="SistemaLaConquistaModel.FK_tbEncabezadoFactura_tbDetallleFactura_fact_Id" />
-        <AssociationConnector Association="SistemaLaConquistaModel.FK_tbProducto_tbDetallleFactura_produ_IdProducto" />
+        <AssociationConnector Association="SistemaLaConquistaModel.FK_tbProducto_tbDetalleFactura_produ_IdProducto" />
+        <AssociationConnector Association="SistemaLaConquistaModel.FK_tbUsuarios_tbDetalleFactura_UsuarioModifica" />
         <AssociationConnector Association="SistemaLaConquistaModel.FK_tbUsuarios_tbDetallleFactura_UsuarioCrea" />
-        <AssociationConnector Association="SistemaLaConquistaModel.FK_tbUsuarios_tbDetallleFactura_UsuarioModifica" />
         <AssociationConnector Association="SistemaLaConquistaModel.FK_tbUsuarios_tbEncabezadoFactura_UsuarioCrea" />
         <AssociationConnector Association="SistemaLaConquistaModel.FK_tbUsuarios_tbEncabezadoFactura_UsuarioModifica" />
         <AssociationConnector Association="SistemaLaConquistaModel.FK_prove_IdProveedor_tbProducto_prove_IdProveedor" />

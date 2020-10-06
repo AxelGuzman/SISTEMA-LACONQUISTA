@@ -20,8 +20,8 @@
     <Property Name="clint_IdCliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="clint_Nombre" Type="nvarchar" MaxLength="200" />
     <Property Name="clint_Apellido" Type="nvarchar" MaxLength="200" />
-    <Property Name="clint_Identificacion" Type="nvarchar" MaxLength="14" />
-    <Property Name="clint_Telefono" Type="nvarchar" MaxLength="10" />
+    <Property Name="clint_Identificacion" Type="nvarchar" MaxLength="16" />
+    <Property Name="clint_Telefono" Type="nvarchar" MaxLength="15" />
     <Property Name="clint_Direccion" Type="nvarchar" MaxLength="200" />
     <Property Name="clint_Correo" Type="nvarchar" MaxLength="200" />
     <Property Name="clint_Estado" Type="bit" />
@@ -30,7 +30,7 @@
     <Property Name="UsuarioModifica" Type="int" />
     <Property Name="FechaModifica" Type="datetime" />
   </EntityType>
-  <EntityType Name="tbDetallleFactura">
+  <EntityType Name="tbDetalleFactura">
     <Key>
       <PropertyRef Name="dtfact_Id" />
     </Key>
@@ -77,9 +77,9 @@
     <Property Name="prove_IdProveedor" Type="int" />
     <Property Name="produ_Codigo" Type="nvarchar" MaxLength="200" />
     <Property Name="produ_Descripcion" Type="nvarchar" MaxLength="200" />
-    <Property Name="produ_PrecioCompra" Type="nvarchar" MaxLength="200" />
-    <Property Name="produ_PrecioVenta" Type="nvarchar" MaxLength="14" />
-    <Property Name="produ_Cantidad" Type="int" />
+    <Property Name="produ_PrecioCompra" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="produ_PrecioVenta" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="produ_Cantidad" Type="decimal" Precision="18" Scale="2" />
     <Property Name="produ_Categoria" Type="nvarchar" MaxLength="10" />
     <Property Name="produ_Imagen" Type="varbinary" MaxLength="1" />
     <Property Name="produ_FormatoImagen" Type="nvarchar" MaxLength="10" />
@@ -96,8 +96,8 @@
     <Property Name="prove_IdProveedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="prove_Nombre" Type="nvarchar" MaxLength="200" />
     <Property Name="prove_Apellido" Type="nvarchar" MaxLength="200" />
-    <Property Name="prove_Identificacion" Type="nvarchar" MaxLength="14" />
-    <Property Name="provee_Contacto" Type="nvarchar" MaxLength="10" />
+    <Property Name="prove_Identificacion" Type="nvarchar" MaxLength="16" />
+    <Property Name="provee_Contacto" Type="nvarchar" MaxLength="15" />
     <Property Name="provee_Estado" Type="bit" />
     <Property Name="provee_Correo" Type="nvarchar" MaxLength="200" />
     <Property Name="UsuarioCrea" Type="int" Nullable="false" />
@@ -113,9 +113,9 @@
     <Property Name="user_Nombre" Type="nvarchar" MaxLength="200" />
     <Property Name="user_Apellido" Type="nvarchar" MaxLength="200" />
     <Property Name="user_NombreUsuario" Type="nvarchar" MaxLength="200" />
+    <Property Name="user_Contraseña" Type="varbinary" MaxLength="1" />
     <Property Name="user_Estado" Type="bit" />
     <Property Name="user_FechaCreacion" Type="datetime" />
-    <Property Name="user_Contrasenna" Type="varbinary" MaxLength="8000" />
   </EntityType>
   <Association Name="FK_prove_IdProveedor_tbProducto_prove_IdProveedor">
     <End Role="tbProveedor" Type="Self.tbProveedor" Multiplicity="0..1" />
@@ -153,26 +153,38 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_tbEncabezadoFactura_tbDetallleFactura_fact_Id">
+  <Association Name="FK_tbEncabezadoFactura_tbDetalleFactura_fact_Id">
     <End Role="tbEncabezadoFactura" Type="Self.tbEncabezadoFactura" Multiplicity="0..1" />
-    <End Role="tbDetallleFactura" Type="Self.tbDetallleFactura" Multiplicity="*" />
+    <End Role="tbDetalleFactura" Type="Self.tbDetalleFactura" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tbEncabezadoFactura">
         <PropertyRef Name="fact_Id" />
       </Principal>
-      <Dependent Role="tbDetallleFactura">
+      <Dependent Role="tbDetalleFactura">
         <PropertyRef Name="fact_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_tbProducto_tbDetallleFactura_produ_IdProducto">
+  <Association Name="FK_tbEncabezadoFactura_tbDetallleFactura_fact_Id">
+    <End Role="tbEncabezadoFactura" Type="Self.tbEncabezadoFactura" Multiplicity="0..1" />
+    <End Role="tbDetalleFactura" Type="Self.tbDetalleFactura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbEncabezadoFactura">
+        <PropertyRef Name="fact_Id" />
+      </Principal>
+      <Dependent Role="tbDetalleFactura">
+        <PropertyRef Name="fact_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbProducto_tbDetalleFactura_produ_IdProducto">
     <End Role="tbProducto" Type="Self.tbProducto" Multiplicity="0..1" />
-    <End Role="tbDetallleFactura" Type="Self.tbDetallleFactura" Multiplicity="*" />
+    <End Role="tbDetalleFactura" Type="Self.tbDetalleFactura" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tbProducto">
         <PropertyRef Name="produ_IdProducto" />
       </Principal>
-      <Dependent Role="tbDetallleFactura">
+      <Dependent Role="tbDetalleFactura">
         <PropertyRef Name="produ_IdProducto" />
       </Dependent>
     </ReferentialConstraint>
@@ -237,27 +249,27 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_tbUsuarios_tbDetallleFactura_UsuarioCrea">
-    <End Role="tbUsuario" Type="Self.tbUsuario" Multiplicity="1" />
-    <End Role="tbDetallleFactura" Type="Self.tbDetallleFactura" Multiplicity="*" />
+  <Association Name="FK_tbUsuarios_tbDetalleFactura_UsuarioModifica">
+    <End Role="tbUsuario" Type="Self.tbUsuario" Multiplicity="0..1" />
+    <End Role="tbDetalleFactura" Type="Self.tbDetalleFactura" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tbUsuario">
         <PropertyRef Name="user_IdUsuario" />
       </Principal>
-      <Dependent Role="tbDetallleFactura">
-        <PropertyRef Name="UsuarioCrea" />
+      <Dependent Role="tbDetalleFactura">
+        <PropertyRef Name="UsuarioModifica" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_tbUsuarios_tbDetallleFactura_UsuarioModifica">
-    <End Role="tbUsuario" Type="Self.tbUsuario" Multiplicity="0..1" />
-    <End Role="tbDetallleFactura" Type="Self.tbDetallleFactura" Multiplicity="*" />
+  <Association Name="FK_tbUsuarios_tbDetallleFactura_UsuarioCrea">
+    <End Role="tbUsuario" Type="Self.tbUsuario" Multiplicity="1" />
+    <End Role="tbDetalleFactura" Type="Self.tbDetalleFactura" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tbUsuario">
         <PropertyRef Name="user_IdUsuario" />
       </Principal>
-      <Dependent Role="tbDetallleFactura">
-        <PropertyRef Name="UsuarioModifica" />
+      <Dependent Role="tbDetalleFactura">
+        <PropertyRef Name="UsuarioCrea" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -336,7 +348,7 @@
   <EntityContainer Name="SistemaLaConquistaModelStoreContainer">
     <EntitySet Name="tbCatalogoProductos" EntityType="Self.tbCatalogoProductos" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbCliente" EntityType="Self.tbCliente" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="tbDetallleFactura" EntityType="Self.tbDetallleFactura" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbDetalleFactura" EntityType="Self.tbDetalleFactura" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbEncabezadoFactura" EntityType="Self.tbEncabezadoFactura" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbProducto" EntityType="Self.tbProducto" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbProveedor" EntityType="Self.tbProveedor" Schema="dbo" store:Type="Tables" />
@@ -353,13 +365,17 @@
       <End Role="tbCliente" EntitySet="tbCliente" />
       <End Role="tbEncabezadoFactura" EntitySet="tbEncabezadoFactura" />
     </AssociationSet>
+    <AssociationSet Name="FK_tbEncabezadoFactura_tbDetalleFactura_fact_Id" Association="Self.FK_tbEncabezadoFactura_tbDetalleFactura_fact_Id">
+      <End Role="tbEncabezadoFactura" EntitySet="tbEncabezadoFactura" />
+      <End Role="tbDetalleFactura" EntitySet="tbDetalleFactura" />
+    </AssociationSet>
     <AssociationSet Name="FK_tbEncabezadoFactura_tbDetallleFactura_fact_Id" Association="Self.FK_tbEncabezadoFactura_tbDetallleFactura_fact_Id">
       <End Role="tbEncabezadoFactura" EntitySet="tbEncabezadoFactura" />
-      <End Role="tbDetallleFactura" EntitySet="tbDetallleFactura" />
+      <End Role="tbDetalleFactura" EntitySet="tbDetalleFactura" />
     </AssociationSet>
-    <AssociationSet Name="FK_tbProducto_tbDetallleFactura_produ_IdProducto" Association="Self.FK_tbProducto_tbDetallleFactura_produ_IdProducto">
+    <AssociationSet Name="FK_tbProducto_tbDetalleFactura_produ_IdProducto" Association="Self.FK_tbProducto_tbDetalleFactura_produ_IdProducto">
       <End Role="tbProducto" EntitySet="tbProducto" />
-      <End Role="tbDetallleFactura" EntitySet="tbDetallleFactura" />
+      <End Role="tbDetalleFactura" EntitySet="tbDetalleFactura" />
     </AssociationSet>
     <AssociationSet Name="FK_tbProveedor_tbCatalogoProductos_prove_IdProveedor" Association="Self.FK_tbProveedor_tbCatalogoProductos_prove_IdProveedor">
       <End Role="tbProveedor" EntitySet="tbProveedor" />
@@ -381,13 +397,13 @@
       <End Role="tbUsuario" EntitySet="tbUsuario" />
       <End Role="tbCliente" EntitySet="tbCliente" />
     </AssociationSet>
+    <AssociationSet Name="FK_tbUsuarios_tbDetalleFactura_UsuarioModifica" Association="Self.FK_tbUsuarios_tbDetalleFactura_UsuarioModifica">
+      <End Role="tbUsuario" EntitySet="tbUsuario" />
+      <End Role="tbDetalleFactura" EntitySet="tbDetalleFactura" />
+    </AssociationSet>
     <AssociationSet Name="FK_tbUsuarios_tbDetallleFactura_UsuarioCrea" Association="Self.FK_tbUsuarios_tbDetallleFactura_UsuarioCrea">
       <End Role="tbUsuario" EntitySet="tbUsuario" />
-      <End Role="tbDetallleFactura" EntitySet="tbDetallleFactura" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tbUsuarios_tbDetallleFactura_UsuarioModifica" Association="Self.FK_tbUsuarios_tbDetallleFactura_UsuarioModifica">
-      <End Role="tbUsuario" EntitySet="tbUsuario" />
-      <End Role="tbDetallleFactura" EntitySet="tbDetallleFactura" />
+      <End Role="tbDetalleFactura" EntitySet="tbDetalleFactura" />
     </AssociationSet>
     <AssociationSet Name="FK_tbUsuarios_tbEncabezadoFactura_UsuarioCrea" Association="Self.FK_tbUsuarios_tbEncabezadoFactura_UsuarioCrea">
       <End Role="tbUsuario" EntitySet="tbUsuario" />

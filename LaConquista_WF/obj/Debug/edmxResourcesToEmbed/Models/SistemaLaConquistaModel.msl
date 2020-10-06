@@ -33,9 +33,9 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tbDetallleFactura">
-      <EntityTypeMapping TypeName="SistemaLaConquistaModel.tbDetallleFactura">
-        <MappingFragment StoreEntitySet="tbDetallleFactura">
+    <EntitySetMapping Name="tbDetalleFactura">
+      <EntityTypeMapping TypeName="SistemaLaConquistaModel.tbDetalleFactura">
+        <MappingFragment StoreEntitySet="tbDetalleFactura">
           <ScalarProperty Name="FechaModifica" ColumnName="FechaModifica" />
           <ScalarProperty Name="UsuarioModifica" ColumnName="UsuarioModifica" />
           <ScalarProperty Name="FechaCrea" ColumnName="FechaCrea" />
@@ -115,9 +115,9 @@
     <EntitySetMapping Name="tbUsuario">
       <EntityTypeMapping TypeName="SistemaLaConquistaModel.tbUsuario">
         <MappingFragment StoreEntitySet="tbUsuario">
-          <ScalarProperty Name="user_Contrasenna" ColumnName="user_Contrasenna" />
           <ScalarProperty Name="user_FechaCreacion" ColumnName="user_FechaCreacion" />
           <ScalarProperty Name="user_Estado" ColumnName="user_Estado" />
+          <ScalarProperty Name="user_Contraseña" ColumnName="user_Contraseña" />
           <ScalarProperty Name="user_NombreUsuario" ColumnName="user_NombreUsuario" />
           <ScalarProperty Name="user_Apellido" ColumnName="user_Apellido" />
           <ScalarProperty Name="user_Nombre" ColumnName="user_Nombre" />
