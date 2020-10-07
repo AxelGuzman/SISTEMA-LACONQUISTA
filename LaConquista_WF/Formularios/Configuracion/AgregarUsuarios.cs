@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LaConquista_WF.Models;
 using LaConquista_WF.Helpers;
-
+using static LaConquista_WF.Helpers.Utilidades;
 
 namespace LaConquista_WF
 {
@@ -33,33 +33,56 @@ namespace LaConquista_WF
 
         private void BTNINGRESARUSUARIO_Click(object sender, EventArgs e)
         {
-            using (SistemaLaConquistaEntities model = new SistemaLaConquistaEntities())
+            string pass = TXT_CLAVE.Text;
+            string passConfirm = TXT_CONFIRMARCLAVE.Text;
+
+            if(pass == passConfirm)
             {
-                Utilidades u = new Utilidades();
-
-                if (id == null)
-                    usuarios = new tbUsuario();
-
-
-
-                usuarios.user_Nombre = TXT_NOMBRE.Text;
-                usuarios.user_Apellido = TXT_APELLIDO.Text;
-                usuarios.user_NombreUsuario = TXT_USUARIO.Text;
-                usuarios.user_FechaCreacion = DateTime.Now;
-
-                 
-
-                if (id == null)
+                using (SistemaLaConquistaEntities model = new SistemaLaConquistaEntities())
                 {
-                    model.tbUsuario.Add(usuarios);
+                    Utilidades u = new Utilidades();
+
+                    if (id == null)
+                        usuarios = new tbUsuario();
+
+                    string encryptpass = Encrypt.GetSHA256(TXT_CLAVE.Text.Trim());
+                    usuarios.user_Nombre = TXT_NOMBRE.Text;
+                    usuarios.user_Apellido = TXT_APELLIDO.Text;
+                    usuarios.user_NombreUsuario = TXT_USUARIO.Text;
+
+                    bool v = model.tbUsuario.Any(b => b.user_NombreUsuario == TXT_USUARIO.Text);
+                    if (v)
+                    {
+                        MessageBox.Show("Nombre de usuario ya existe");
+                        TXT_USUARIO.Text = "";
+                        TXT_CLAVE.Text = "";
+                        TXT_CONFIRMARCLAVE.Text = "";
+                    }
+                    else
+                    {
+                        usuarios.user_FechaCreacion = DateTime.Now;
+                        usuarios.user_Contrasenna = encryptpass;
+
+                        if (id == null)
+                        {
+                            model.tbUsuario.Add(usuarios);
+                        }
+                        else
+                        {
+                            model.Entry(usuarios).State = System.Data.Entity.EntityState.Modified;
+                        }
+
+                        model.SaveChanges();
+                        this.Hide();
+                    }
+
                 }
-                else
-                {
-                    model.Entry(usuarios).State = System.Data.Entity.EntityState.Modified;
-                }
-                
-                model.SaveChanges();
-                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Confirmación de contraseña incorrecta, intente de nuevo");
+                TXT_CLAVE.Text = "";
+                TXT_CONFIRMARCLAVE.Text = "";
             }
         }
 

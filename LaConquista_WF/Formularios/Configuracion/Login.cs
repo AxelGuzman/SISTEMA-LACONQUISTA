@@ -1,4 +1,5 @@
 ﻿using LaConquista_WF.Formularios.Proveedores;
+using LaConquista_WF.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static LaConquista_WF.Helpers.Utilidades;
 
 namespace LaConquista_WF
 {
@@ -26,7 +28,7 @@ namespace LaConquista_WF
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -38,12 +40,28 @@ namespace LaConquista_WF
         {
 
         }
-
+        
         private void button2_Click(object sender, EventArgs e)
         {
-            ListadoDeProveedores lst = new ListadoDeProveedores();
-            this.Hide();
-            lst.Show();
+            string encryptpass = Encrypt.GetSHA256(TXT_CLAVE.Text.Trim());
+            using (SistemaLaConquistaEntities db = new SistemaLaConquistaEntities())
+            {
+                var user = from x in db.tbUsuario
+                          where x.user_NombreUsuario == TXT_USUARIO.Text
+                          && x.user_Contrasenna == encryptpass
+                          select x;
+                if(user.Count() > 0)
+                {
+                    ListadoUsuarios lst = new ListadoUsuarios();
+                    this.Hide();
+                    lst.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Usario o contraseña incorrecta");
+                }
+            }
+
             
         }
     }

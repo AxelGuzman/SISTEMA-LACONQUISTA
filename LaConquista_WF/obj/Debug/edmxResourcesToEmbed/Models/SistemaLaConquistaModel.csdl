@@ -220,7 +220,7 @@
     <Property Name="user_NombreUsuario" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="user_Estado" Type="Boolean" />
     <Property Name="user_FechaCreacion" Type="DateTime" Precision="3" />
-    <Property Name="user_Contrasenna" Type="Binary" MaxLength="8000" FixedLength="false" />
+    <Property Name="user_Contrasenna" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="tbCatalogoProductos" Relationship="SistemaLaConquistaModel.FK_tbUsuarios_tbCatalogoProductos_UsuarioCrea" FromRole="tbUsuario" ToRole="tbCatalogoProductos" />
     <NavigationProperty Name="tbCatalogoProductos1" Relationship="SistemaLaConquistaModel.FK_tbUsuarios_tbCatalogoProductos_UsuarioModifica" FromRole="tbUsuario" ToRole="tbCatalogoProductos" />
     <NavigationProperty Name="tbCliente" Relationship="SistemaLaConquistaModel.FK_tbUsuarios_tbCliente_UsuarioCrea" FromRole="tbUsuario" ToRole="tbCliente" />

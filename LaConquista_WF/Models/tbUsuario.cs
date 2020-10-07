@@ -37,7 +37,7 @@ namespace LaConquista_WF.Models
         public string user_NombreUsuario { get; set; }
         public Nullable<bool> user_Estado { get; set; }
         public Nullable<System.DateTime> user_FechaCreacion { get; set; }
-        public byte[] user_Contrasenna { get; set; }
+        public string user_Contrasenna { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbCatalogoProductos> tbCatalogoProductos { get; set; }

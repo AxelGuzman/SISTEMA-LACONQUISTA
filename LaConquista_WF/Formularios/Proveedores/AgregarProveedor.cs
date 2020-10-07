@@ -45,10 +45,14 @@ namespace LaConquista_WF.Formularios.Proveedores
 
                 if (id == null)
                 {
+                    proveedores.UsuarioCrea = 1;
+                    proveedores.FechaCrea = DateTime.Now;
                     db.tbProveedor.Add(proveedores);
                 }
                 else
                 {
+                    proveedores.UsuarioModifica = 1;
+                    proveedores.FechaModifica = DateTime.Now;
                     db.Entry(proveedores).State = System.Data.Entity.EntityState.Modified;
                 }
                 db.SaveChanges();
