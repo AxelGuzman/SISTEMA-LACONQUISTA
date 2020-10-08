@@ -31,13 +31,8 @@
             this.BTNSALIRPRODUCTO = new System.Windows.Forms.Button();
             this.btbINGRESARPRODUCTO = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridViewPRODUCTO = new System.Windows.Forms.DataGridView();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CantidadDisponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPRODUCTO)).BeginInit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // BTNSALIRPRODUCTO
@@ -51,6 +46,7 @@
             this.BTNSALIRPRODUCTO.TabIndex = 9;
             this.BTNSALIRPRODUCTO.Text = "SALIR";
             this.BTNSALIRPRODUCTO.UseVisualStyleBackColor = false;
+            this.BTNSALIRPRODUCTO.Click += new System.EventHandler(this.BTNSALIRPRODUCTO_Click);
             // 
             // btbINGRESARPRODUCTO
             // 
@@ -63,6 +59,7 @@
             this.btbINGRESARPRODUCTO.TabIndex = 8;
             this.btbINGRESARPRODUCTO.Text = "INGRESAR";
             this.btbINGRESARPRODUCTO.UseVisualStyleBackColor = false;
+            this.btbINGRESARPRODUCTO.Click += new System.EventHandler(this.btbINGRESARPRODUCTO_Click);
             // 
             // label1
             // 
@@ -74,44 +71,16 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "LISTADO DE PRODUCTOS";
             // 
-            // dataGridViewPRODUCTO
+            // dataGridView1
             // 
-            this.dataGridViewPRODUCTO.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPRODUCTO.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Codigo,
-            this.Descripcion,
-            this.Precio,
-            this.Categoria,
-            this.CantidadDisponible});
-            this.dataGridViewPRODUCTO.Location = new System.Drawing.Point(37, 65);
-            this.dataGridViewPRODUCTO.Name = "dataGridViewPRODUCTO";
-            this.dataGridViewPRODUCTO.Size = new System.Drawing.Size(546, 190);
-            this.dataGridViewPRODUCTO.TabIndex = 6;
-            // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Código";
-            this.Codigo.Name = "Codigo";
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.Name = "Descripcion";
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            // 
-            // Categoria
-            // 
-            this.Categoria.HeaderText = "Catégoria";
-            this.Categoria.Name = "Categoria";
-            // 
-            // CantidadDisponible
-            // 
-            this.CantidadDisponible.HeaderText = "Cantidad Disponible";
-            this.CantidadDisponible.Name = "CantidadDisponible";
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(16, 71);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(594, 184);
+            this.dataGridView1.TabIndex = 10;
             // 
             // ListadoProducto
             // 
@@ -119,13 +88,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Goldenrod;
             this.ClientSize = new System.Drawing.Size(622, 332);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.BTNSALIRPRODUCTO);
             this.Controls.Add(this.btbINGRESARPRODUCTO);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridViewPRODUCTO);
             this.Name = "ListadoProducto";
             this.Text = "ListadoProducto";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPRODUCTO)).EndInit();
+            this.Load += new System.EventHandler(this.ListadoProducto_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,11 +106,6 @@
         private System.Windows.Forms.Button BTNSALIRPRODUCTO;
         private System.Windows.Forms.Button btbINGRESARPRODUCTO;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridViewPRODUCTO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CantidadDisponible;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
