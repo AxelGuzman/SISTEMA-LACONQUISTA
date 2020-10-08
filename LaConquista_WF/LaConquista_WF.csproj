@@ -174,6 +174,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SistemaLaConquistaDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="SistemaLaConquistaDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SistemaLaConquistaDataSet1.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Formularios\Clientes\AgregarCliente.resx">
       <DependentUpon>AgregarCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -247,6 +252,17 @@
     </None>
     <None Include="SistemaLaConquistaDataSet.xss">
       <DependentUpon>SistemaLaConquistaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SistemaLaConquistaDataSet1.xsc">
+      <DependentUpon>SistemaLaConquistaDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="SistemaLaConquistaDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SistemaLaConquistaDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SistemaLaConquistaDataSet1.xss">
+      <DependentUpon>SistemaLaConquistaDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

@@ -55,5 +55,26 @@ namespace LaConquista_WF
             menu.Show();
             this.Close();
         }
+        private int? GetId()
+        {
+            try
+            {
+                return int.Parse(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString());
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            int? id = GetId();
+            if (id != null)
+            {
+                AgregarProducto agregarProducto = new AgregarProducto(id);
+                agregarProducto.ShowDialog();
+                DisplayProducto();
+            }
+        }
     }
 }
