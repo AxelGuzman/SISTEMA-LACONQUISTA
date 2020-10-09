@@ -76,6 +76,7 @@
     <EntitySetMapping Name="tbProducto">
       <EntityTypeMapping TypeName="SistemaLaConquistaModel.tbProducto">
         <MappingFragment StoreEntitySet="tbProducto">
+          <ScalarProperty Name="produ_Foto" ColumnName="produ_Foto" />
           <ScalarProperty Name="FechaModifica" ColumnName="FechaModifica" />
           <ScalarProperty Name="UsuarioModifica" ColumnName="UsuarioModifica" />
           <ScalarProperty Name="FechaCrea" ColumnName="FechaCrea" />

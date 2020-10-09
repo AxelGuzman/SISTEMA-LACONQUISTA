@@ -28,16 +28,33 @@ namespace LaConquista_WF
         {
             using (SistemaLaConquistaEntities db = new SistemaLaConquistaEntities())
             {
-                ontbProducto = db.tbProducto.Find(id);
-
-                txt_Codigo.Text = ontbProducto.produ_Codigo;
-                txt_Descripcion.Text = ontbProducto.produ_Descripcion;
-                txt_PrecioCompra.Text = Convert.ToString(ontbProducto.produ_PrecioCompra);
-                txt_PrecioVenta.Text = Convert.ToString(ontbProducto.produ_PrecioVenta);
-                txt_Cantidad.Text = Convert.ToString(ontbProducto.produ_Cantidad);
-                cbx_Categoria.Text = Convert.ToString(ontbProducto.cprod_Id);
-                cbx_Categoria.Text = ontbProducto.produ_Categoria;
-                cbx_Proveedor.Text = Convert.ToString(ontbProducto.prove_IdProveedor);
+                try
+                {
+                    ontbProducto = db.tbProducto.Find(id);
+                    txt_Codigo.Text = ontbProducto.produ_Codigo;
+                    txt_Descripcion.Text = ontbProducto.produ_Descripcion;
+                    txt_PrecioCompra.Text = Convert.ToString(ontbProducto.produ_PrecioCompra);
+                    txt_PrecioVenta.Text = Convert.ToString(ontbProducto.produ_PrecioVenta);
+                    txt_Cantidad.Text = Convert.ToString(ontbProducto.produ_Cantidad);
+                    cbx_Categoria.Text = Convert.ToString(ontbProducto.cprod_Id);
+                    cbx_Categoria.Text = ontbProducto.produ_Categoria;
+                    cbx_Proveedor.Text = Convert.ToString(ontbProducto.prove_IdProveedor);
+                    byte[] img = (byte[])ontbProducto.produ_Foto;
+                    if(img == null)
+                    {
+                        lbInfImagen.Visible = true;
+                    }
+                    else
+                    {
+                        System.IO.MemoryStream ms = new System.IO.MemoryStream(img);
+                        pictboxFoto.Image = Image.FromStream(ms);
+                    }
+                    
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Ocurrio un error: " + ex.Message);
+                }
             }
 
         }
@@ -101,6 +118,9 @@ namespace LaConquista_WF
                         ontbProducto.produ_Estado = true;
                         ontbProducto.FechaCrea = DateTime.Now;
                         ontbProducto.UsuarioCrea = 5;
+                        System.IO.MemoryStream ms = new System.IO.MemoryStream();
+                        pictboxFoto.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                        ontbProducto.produ_Foto = ms.GetBuffer();
                         db.tbProducto.Add(ontbProducto);
                         db.SaveChanges();
                         MessageBox.Show("Datos ingresado correctamente!", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -117,6 +137,9 @@ namespace LaConquista_WF
                         ontbProducto.prove_IdProveedor = Convert.ToInt32(cbx_Proveedor.SelectedValue);// cbx_Proveedor.Text;
                         ontbProducto.produ_Estado = true;
                         ontbProducto.UsuarioModifica = 5;
+                        System.IO.MemoryStream ms = new System.IO.MemoryStream();
+                        pictboxFoto.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                        ontbProducto.produ_Foto = ms.GetBuffer();
                         ontbProducto.FechaModifica = DateTime.Now;
                         db.Entry(ontbProducto).State = System.Data.Entity.EntityState.Modified;
                         db.SaveChanges();
@@ -129,6 +152,16 @@ namespace LaConquista_WF
             catch (Exception ex)
             {
                 MessageBox.Show("Error al Guardar: " + ex.Message);
+            }
+        }
+
+        private void btnImagen_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fo = new OpenFileDialog();
+            DialogResult rs = fo.ShowDialog();
+            if(rs == DialogResult.OK)
+            {
+                pictboxFoto.Image = Image.FromFile(fo.FileName);
             }
         }
     }

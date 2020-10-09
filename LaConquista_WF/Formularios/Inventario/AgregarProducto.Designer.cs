@@ -48,14 +48,18 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txt_Cantidad = new System.Windows.Forms.TextBox();
             this.cbx_Proveedor = new System.Windows.Forms.ComboBox();
-            this.tbCatalogoProductosTableAdapter = new LaConquista_WF.SistemaLaConquistaDataSet1TableAdapters.tbCatalogoProductosTableAdapter();
             this.tbProveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tbCatalogoProductosTableAdapter = new LaConquista_WF.SistemaLaConquistaDataSet1TableAdapters.tbCatalogoProductosTableAdapter();
             this.tbProveedorTableAdapter = new LaConquista_WF.SistemaLaConquistaDataSet1TableAdapters.tbProveedorTableAdapter();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.pictboxFoto = new System.Windows.Forms.PictureBox();
+            this.btnImagen = new System.Windows.Forms.Button();
+            this.lbInfImagen = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tbCatalogoProductosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaLaConquistaDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbProveedorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictboxFoto)).BeginInit();
             this.SuspendLayout();
             // 
             // TELEFONO
@@ -134,7 +138,7 @@
             this.BTNINGRESARPRODUCTO.Name = "BTNINGRESARPRODUCTO";
             this.BTNINGRESARPRODUCTO.Size = new System.Drawing.Size(100, 32);
             this.BTNINGRESARPRODUCTO.TabIndex = 22;
-            this.BTNINGRESARPRODUCTO.Text = "INGRESAR";
+            this.BTNINGRESARPRODUCTO.Text = "GUARDAR";
             this.BTNINGRESARPRODUCTO.UseVisualStyleBackColor = false;
             this.BTNINGRESARPRODUCTO.Click += new System.EventHandler(this.BTNINGRESARPRODUCTO_Click);
             // 
@@ -244,14 +248,14 @@
             this.cbx_Proveedor.TabIndex = 35;
             this.cbx_Proveedor.ValueMember = "prove_IdProveedor";
             // 
-            // tbCatalogoProductosTableAdapter
-            // 
-            this.tbCatalogoProductosTableAdapter.ClearBeforeFill = true;
-            // 
             // tbProveedorBindingSource
             // 
             this.tbProveedorBindingSource.DataMember = "tbProveedor";
             this.tbProveedorBindingSource.DataSource = this.sistemaLaConquistaDataSet1;
+            // 
+            // tbCatalogoProductosTableAdapter
+            // 
+            this.tbCatalogoProductosTableAdapter.ClearBeforeFill = true;
             // 
             // tbProveedorTableAdapter
             // 
@@ -278,12 +282,48 @@
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "[Cerrar Sesión]";
             // 
+            // pictboxFoto
+            // 
+            this.pictboxFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictboxFoto.Location = new System.Drawing.Point(338, 55);
+            this.pictboxFoto.Name = "pictboxFoto";
+            this.pictboxFoto.Size = new System.Drawing.Size(145, 148);
+            this.pictboxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictboxFoto.TabIndex = 42;
+            this.pictboxFoto.TabStop = false;
+            // 
+            // btnImagen
+            // 
+            this.btnImagen.BackColor = System.Drawing.Color.Black;
+            this.btnImagen.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImagen.ForeColor = System.Drawing.Color.White;
+            this.btnImagen.Location = new System.Drawing.Point(338, 209);
+            this.btnImagen.Name = "btnImagen";
+            this.btnImagen.Size = new System.Drawing.Size(145, 32);
+            this.btnImagen.TabIndex = 43;
+            this.btnImagen.Text = "IMAGEN";
+            this.btnImagen.UseVisualStyleBackColor = false;
+            this.btnImagen.Click += new System.EventHandler(this.btnImagen_Click);
+            // 
+            // lbInfImagen
+            // 
+            this.lbInfImagen.AutoSize = true;
+            this.lbInfImagen.Location = new System.Drawing.Point(364, 118);
+            this.lbInfImagen.Name = "lbInfImagen";
+            this.lbInfImagen.Size = new System.Drawing.Size(106, 13);
+            this.lbInfImagen.TabIndex = 44;
+            this.lbInfImagen.Text = "Agregue una Imagen";
+            this.lbInfImagen.Visible = false;
+            // 
             // AgregarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Goldenrod;
-            this.ClientSize = new System.Drawing.Size(444, 423);
+            this.ClientSize = new System.Drawing.Size(545, 423);
+            this.Controls.Add(this.lbInfImagen);
+            this.Controls.Add(this.btnImagen);
+            this.Controls.Add(this.pictboxFoto);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label6);
@@ -309,6 +349,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbCatalogoProductosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaLaConquistaDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbProveedorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictboxFoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -339,5 +380,8 @@
         private SistemaLaConquistaDataSet1TableAdapters.tbProveedorTableAdapter tbProveedorTableAdapter;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.PictureBox pictboxFoto;
+        private System.Windows.Forms.Button btnImagen;
+        private System.Windows.Forms.Label lbInfImagen;
     }
 }

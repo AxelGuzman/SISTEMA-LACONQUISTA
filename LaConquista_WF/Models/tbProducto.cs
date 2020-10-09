@@ -36,6 +36,7 @@ namespace LaConquista_WF.Models
         public Nullable<System.DateTime> FechaCrea { get; set; }
         public Nullable<int> UsuarioModifica { get; set; }
         public Nullable<System.DateTime> FechaModifica { get; set; }
+        public byte[] produ_Foto { get; set; }
     
         public virtual tbCatalogoProductos tbCatalogoProductos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -88,3 +88,4 @@ C:\Users\joshu\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\bin\Debug\Ent
 C:\Users\joshu\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\bin\Debug\EntityFramework.xml
 C:\Users\joshu\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\joshu\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\obj\Debug\LaConquista_WF.csproj.CopyComplete
+C:\Users\joshu\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\obj\Debug\LaConquista_WF.csprojAssemblyReference.cache

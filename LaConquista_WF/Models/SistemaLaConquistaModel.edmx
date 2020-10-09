@@ -93,6 +93,7 @@
           <Property Name="FechaCrea" Type="datetime" />
           <Property Name="UsuarioModifica" Type="int" />
           <Property Name="FechaModifica" Type="datetime" />
+          <Property Name="produ_Foto" Type="image" />
         </EntityType>
         <EntityType Name="tbProveedor">
           <Key>
@@ -629,6 +630,7 @@
           <Property Name="FechaCrea" Type="DateTime" Precision="3" />
           <Property Name="UsuarioModifica" Type="Int32" />
           <Property Name="FechaModifica" Type="DateTime" Precision="3" />
+          <Property Name="produ_Foto" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="tbCatalogoProductos" Relationship="SistemaLaConquistaModel.FK_tbCatalogoProductos_tbProducto_cprod_Id" FromRole="tbProducto" ToRole="tbCatalogoProductos" />
           <NavigationProperty Name="tbDetalleFactura" Relationship="SistemaLaConquistaModel.FK_tbProducto_tbDetalleFactura_produ_IdProducto" FromRole="tbProducto" ToRole="tbDetalleFactura" />
           <NavigationProperty Name="tbProveedor" Relationship="SistemaLaConquistaModel.FK_prove_IdProveedor_tbProducto_prove_IdProveedor" FromRole="tbProducto" ToRole="tbProveedor" />
@@ -988,6 +990,7 @@
           <EntitySetMapping Name="tbProducto">
             <EntityTypeMapping TypeName="SistemaLaConquistaModel.tbProducto">
               <MappingFragment StoreEntitySet="tbProducto">
+                <ScalarProperty Name="produ_Foto" ColumnName="produ_Foto" />
                 <ScalarProperty Name="FechaModifica" ColumnName="FechaModifica" />
                 <ScalarProperty Name="UsuarioModifica" ColumnName="UsuarioModifica" />
                 <ScalarProperty Name="FechaCrea" ColumnName="FechaCrea" />

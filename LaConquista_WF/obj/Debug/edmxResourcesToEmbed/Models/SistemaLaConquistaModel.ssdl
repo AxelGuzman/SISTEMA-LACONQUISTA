@@ -88,6 +88,7 @@
     <Property Name="FechaCrea" Type="datetime" />
     <Property Name="UsuarioModifica" Type="int" />
     <Property Name="FechaModifica" Type="datetime" />
+    <Property Name="produ_Foto" Type="image" />
   </EntityType>
   <EntityType Name="tbProveedor">
     <Key>
