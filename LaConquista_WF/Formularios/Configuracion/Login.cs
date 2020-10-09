@@ -1,4 +1,5 @@
 ﻿using LaConquista_WF.Formularios.Proveedores;
+using LaConquista_WF.Helpers;
 using LaConquista_WF.Models;
 using System;
 using System.Collections.Generic;
@@ -53,9 +54,16 @@ namespace LaConquista_WF
                 if(user.Count() > 0)
                 {
                     ListadoUsuarios lst = new ListadoUsuarios();
+
+                    tbUsuario u = new tbUsuario();
+                    u.user_NombreUsuario = user.FirstOrDefault().user_NombreUsuario;
+                    u.user_IdUsuario = user.FirstOrDefault().user_IdUsuario;
+
+                    session.usuario = u;
+
                     this.Hide();
                     lst.Show();
-                }
+                }   
                 else
                 {
                     MessageBox.Show("Usario o contraseña incorrecta");

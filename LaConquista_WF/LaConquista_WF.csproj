@@ -127,6 +127,7 @@
     <Compile Include="Formularios\Proveedores\ListadoDeProveedores.Designer.cs">
       <DependentUpon>ListadoDeProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\session.cs" />
     <Compile Include="Helpers\Utilidades.cs" />
     <Compile Include="Models\Parciales\Proveedores\listProveedores.cs" />
     <Compile Include="Models\SistemaLaConquistaModel.Context.cs">

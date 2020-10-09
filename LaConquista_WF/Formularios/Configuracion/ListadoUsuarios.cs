@@ -1,4 +1,5 @@
-﻿using LaConquista_WF.Models;
+﻿using LaConquista_WF.Helpers;
+using LaConquista_WF.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,6 +34,7 @@ namespace LaConquista_WF
 
         private void BTNINGRESARUSUARIO_Click(object sender, EventArgs e)
         {
+            string user = session.usuario.user_NombreUsuario;
             AgregarUsuarios add = new AgregarUsuarios();
             add.ShowDialog();
             refrescar();
