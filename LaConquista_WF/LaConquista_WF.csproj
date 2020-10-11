@@ -67,6 +67,12 @@
     <Compile Include="Formularios\Factura\ModalCobrar.Designer.cs">
       <DependentUpon>ModalCobrar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Generales\Inhabilitar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Generales\Inhabilitar.Designer.cs">
+      <DependentUpon>Inhabilitar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Inventario\AgregarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,18 @@
     </Compile>
     <Compile Include="Formularios\Proveedores\AgregarProveedor.Designer.cs">
       <DependentUpon>AgregarProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Proveedores\alterarEstado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Proveedores\alterarEstado.Designer.cs">
+      <DependentUpon>alterarEstado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Proveedores\inhabilitar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Proveedores\inhabilitar.Designer.cs">
+      <DependentUpon>inhabilitar.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Proveedores\ListadoDeProveedores.cs">
       <SubType>Form</SubType>
@@ -179,6 +197,9 @@
     <EmbeddedResource Include="Formularios\Factura\ModalCobrar.resx">
       <DependentUpon>ModalCobrar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Generales\Inhabilitar.resx">
+      <DependentUpon>Inhabilitar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Inventario\AgregarProducto.resx">
       <DependentUpon>AgregarProducto.cs</DependentUpon>
     </EmbeddedResource>
@@ -205,6 +226,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Proveedores\AgregarProveedor.resx">
       <DependentUpon>AgregarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Proveedores\alterarEstado.resx">
+      <DependentUpon>alterarEstado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Proveedores\inhabilitar.resx">
+      <DependentUpon>inhabilitar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Proveedores\ListadoDeProveedores.resx">
       <DependentUpon>ListadoDeProveedores.cs</DependentUpon>

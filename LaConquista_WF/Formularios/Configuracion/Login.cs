@@ -53,7 +53,7 @@ namespace LaConquista_WF
                           select x;
                 if(user.Count() > 0)
                 {
-                    ListadoUsuarios lst = new ListadoUsuarios();
+                    ListadoDeProveedores lst = new ListadoDeProveedores();
 
                     tbUsuario u = new tbUsuario();
                     u.user_NombreUsuario = user.FirstOrDefault().user_NombreUsuario;
@@ -67,6 +67,10 @@ namespace LaConquista_WF
                 else
                 {
                     MessageBox.Show("Usario o contraseña incorrecta");
+
+                    //LABEL_REGISTROS
+                    ListadoDeProveedores l = new ListadoDeProveedores();
+                    l.Show();
                 }
             }
 

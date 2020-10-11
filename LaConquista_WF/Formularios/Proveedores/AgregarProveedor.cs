@@ -1,4 +1,5 @@
-﻿using LaConquista_WF.Models;
+﻿using LaConquista_WF.Helpers;
+using LaConquista_WF.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,13 +46,13 @@ namespace LaConquista_WF.Formularios.Proveedores
 
                 if (id == null)
                 {
-                    proveedores.UsuarioCrea = 1;
+                    proveedores.UsuarioCrea = session.usuario.user_IdUsuario;
                     proveedores.FechaCrea = DateTime.Now;
                     db.tbProveedor.Add(proveedores);
                 }
                 else
                 {
-                    proveedores.UsuarioModifica = 1;
+                    proveedores.UsuarioModifica = session.usuario.user_IdUsuario;
                     proveedores.FechaModifica = DateTime.Now;
                     db.Entry(proveedores).State = System.Data.Entity.EntityState.Modified;
                 }

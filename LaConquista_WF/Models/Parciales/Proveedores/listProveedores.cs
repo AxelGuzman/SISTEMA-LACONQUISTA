@@ -24,5 +24,6 @@ namespace LaConquista_WF.Models.Parciales.Proveedores
 
         public string UsuarioCreado { get; set; }
         public string UsuarioModificado { get; set; }
+        public string estadoStr { get; set; }
     }
 }

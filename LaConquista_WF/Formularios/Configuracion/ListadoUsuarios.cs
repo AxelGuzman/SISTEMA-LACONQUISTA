@@ -86,17 +86,24 @@ namespace LaConquista_WF
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(dataGridViewUSUARIOS.Rows[dataGridViewUSUARIOS.CurrentRow.Index].Cells["Id"].Value.ToString());
-            if (id != null)
+            try
             {
-                AgregarUsuarios agregar = new AgregarUsuarios(id);
-                using (SistemaLaConquistaEntities db = new SistemaLaConquistaEntities())
+                int id = int.Parse(dataGridViewUSUARIOS.Rows[dataGridViewUSUARIOS.CurrentRow.Index].Cells["Id"].Value.ToString());
+                if (id != null)
                 {
-                    tbUsuario usuarios = db.tbUsuario.Find(id);
-                    db.tbUsuario.Remove(usuarios);
-                    db.SaveChanges();
+                    AgregarUsuarios agregar = new AgregarUsuarios(id);
+                    using (SistemaLaConquistaEntities db = new SistemaLaConquistaEntities())
+                    {
+                        tbUsuario usuarios = db.tbUsuario.Find(id);
+                        db.tbUsuario.Remove(usuarios);
+                        db.SaveChanges();
+                    }
+                    refrescar();
                 }
-                refrescar();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("No se puede eliminar este registro debido a que tiene informacion relacionada" + ex.Data);
             }
         }
     }

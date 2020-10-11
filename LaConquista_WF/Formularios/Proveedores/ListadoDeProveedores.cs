@@ -1,6 +1,7 @@
 ﻿using LaConquista_WF.Models;
 using LaConquista_WF.Models.Parciales.Proveedores;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -45,11 +46,35 @@ namespace LaConquista_WF.Formularios.Proveedores
                         IdUsuarioCrea = b.UsuarioCrea,
                         IdUsuarioModifica = b.UsuarioModifica,
                         UsuarioCreado = b.tbUsuario.user_NombreUsuario,
-                        UsuarioModificado = b.tbUsuario1.user_NombreUsuario
+                        UsuarioModificado = b.tbUsuario1.user_NombreUsuario,
+                        estadoStr = b.provee_Estado == true ? "Habilitado" : "Inhabilitado"
                     }).ToList();
 
                     dataGridViewProveedores.DataSource = lst1;
+                    dibujar();
 
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+        private void dibujar()
+        {
+            try
+            {
+                foreach (DataGridViewRow row in (IEnumerable)this.dataGridViewProveedores.Rows)
+                {
+                    bool estado = (bool)row.Cells["Estado"].Value;
+                    if (estado)
+                    {
+                        row.DefaultCellStyle.BackColor = Color.White;// Cells["estadoStr"].defa;
+                    }
+                    else
+                    {
+                        row.DefaultCellStyle.BackColor = Color.Salmon;// Cells["estadoStr"].defa;
+                    }
                 }
             }
             catch (Exception ex)
@@ -72,6 +97,17 @@ namespace LaConquista_WF.Formularios.Proveedores
             {
                 AgregarProveedor agregar = new AgregarProveedor(id);
                 agregar.ShowDialog();
+                refrescar();
+            }
+        }
+
+        private void BTN_INREHABILITAR_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(dataGridViewProveedores.Rows[dataGridViewProveedores.CurrentRow.Index].Cells["id"].Value.ToString());
+            if (id != null)
+            {
+                alterarEstado estado = new alterarEstado(id);
+                estado.ShowDialog();
                 refrescar();
             }
         }
