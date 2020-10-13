@@ -131,6 +131,7 @@
     <Compile Include="Models\ListCategoriaViewModels.cs" />
     <Compile Include="Models\ListClienteViewModels.cs" />
     <Compile Include="Models\ListProductoViewModels.cs" />
+    <Compile Include="Models\SelectProductoViewModels.cs" />
     <Compile Include="Models\SistemaLaConquistaModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

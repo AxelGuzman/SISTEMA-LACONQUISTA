@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label3 = new System.Windows.Forms.Label();
-            this.TXTIDESCUENTO = new System.Windows.Forms.TextBox();
             this.Apellido_cliente = new System.Windows.Forms.Label();
             this.Nombre_cliente = new System.Windows.Forms.Label();
-            this.TXT_DESCRIPCION = new System.Windows.Forms.TextBox();
-            this.TXT_CODIGO = new System.Windows.Forms.TextBox();
+            this.txt_Descripcion = new System.Windows.Forms.TextBox();
+            this.txt_Codigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.BTNINGRESARCLIENTE = new System.Windows.Forms.Button();
@@ -59,7 +57,7 @@
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ISV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BTNAGREGARFACTURA = new System.Windows.Forms.Button();
             this.BTNMENU = new System.Windows.Forms.Button();
@@ -75,35 +73,19 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button18 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txt_Precio = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txt_Cantidad = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(538, 254);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 15);
-            this.label3.TabIndex = 23;
-            this.label3.Text = "DESCUENTO";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // TXTIDESCUENTO
-            // 
-            this.TXTIDESCUENTO.BackColor = System.Drawing.SystemColors.Info;
-            this.TXTIDESCUENTO.Location = new System.Drawing.Point(631, 250);
-            this.TXTIDESCUENTO.Multiline = true;
-            this.TXTIDESCUENTO.Name = "TXTIDESCUENTO";
-            this.TXTIDESCUENTO.Size = new System.Drawing.Size(174, 35);
-            this.TXTIDESCUENTO.TabIndex = 22;
-            this.TXTIDESCUENTO.TextChanged += new System.EventHandler(this.TXTIDESCUENTO_TextChanged);
             // 
             // Apellido_cliente
             // 
             this.Apellido_cliente.AutoSize = true;
             this.Apellido_cliente.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Apellido_cliente.Location = new System.Drawing.Point(255, 254);
+            this.Apellido_cliente.Location = new System.Drawing.Point(167, 254);
             this.Apellido_cliente.Name = "Apellido_cliente";
             this.Apellido_cliente.Size = new System.Drawing.Size(86, 15);
             this.Apellido_cliente.TabIndex = 21;
@@ -121,25 +103,24 @@
             this.Nombre_cliente.Text = "CÓDIGO";
             this.Nombre_cliente.Click += new System.EventHandler(this.Nombre_cliente_Click);
             // 
-            // TXT_DESCRIPCION
+            // txt_Descripcion
             // 
-            this.TXT_DESCRIPCION.BackColor = System.Drawing.SystemColors.Info;
-            this.TXT_DESCRIPCION.Location = new System.Drawing.Point(356, 250);
-            this.TXT_DESCRIPCION.Multiline = true;
-            this.TXT_DESCRIPCION.Name = "TXT_DESCRIPCION";
-            this.TXT_DESCRIPCION.Size = new System.Drawing.Size(174, 35);
-            this.TXT_DESCRIPCION.TabIndex = 19;
-            this.TXT_DESCRIPCION.TextChanged += new System.EventHandler(this.TXT_DESCRIPCION_TextChanged);
+            this.txt_Descripcion.BackColor = System.Drawing.SystemColors.Info;
+            this.txt_Descripcion.Location = new System.Drawing.Point(252, 250);
+            this.txt_Descripcion.Multiline = true;
+            this.txt_Descripcion.Name = "txt_Descripcion";
+            this.txt_Descripcion.Size = new System.Drawing.Size(191, 35);
+            this.txt_Descripcion.TabIndex = 19;
+            this.txt_Descripcion.TextChanged += new System.EventHandler(this.TXT_DESCRIPCION_TextChanged);
             // 
-            // TXT_CODIGO
+            // txt_Codigo
             // 
-            this.TXT_CODIGO.BackColor = System.Drawing.SystemColors.Info;
-            this.TXT_CODIGO.Location = new System.Drawing.Point(73, 250);
-            this.TXT_CODIGO.Multiline = true;
-            this.TXT_CODIGO.Name = "TXT_CODIGO";
-            this.TXT_CODIGO.Size = new System.Drawing.Size(174, 35);
-            this.TXT_CODIGO.TabIndex = 18;
-            this.TXT_CODIGO.TextChanged += new System.EventHandler(this.TXT_CODIGO_TextChanged);
+            this.txt_Codigo.BackColor = System.Drawing.SystemColors.Info;
+            this.txt_Codigo.Location = new System.Drawing.Point(65, 250);
+            this.txt_Codigo.Multiline = true;
+            this.txt_Codigo.Name = "txt_Codigo";
+            this.txt_Codigo.Size = new System.Drawing.Size(94, 35);
+            this.txt_Codigo.TabIndex = 18;
             // 
             // label1
             // 
@@ -367,7 +348,7 @@
             this.Descripcion,
             this.Precio,
             this.Cantidad,
-            this.ISV,
+            this.SubTotal,
             this.Descuento});
             this.dataGridView1.Location = new System.Drawing.Point(43, 293);
             this.dataGridView1.Name = "dataGridView1";
@@ -394,10 +375,10 @@
             this.Cantidad.HeaderText = "Cantidad";
             this.Cantidad.Name = "Cantidad";
             // 
-            // ISV
+            // SubTotal
             // 
-            this.ISV.HeaderText = "ISV";
-            this.ISV.Name = "ISV";
+            this.SubTotal.HeaderText = "Sub Total";
+            this.SubTotal.Name = "SubTotal";
             // 
             // Descuento
             // 
@@ -415,6 +396,7 @@
             this.BTNAGREGARFACTURA.TabIndex = 44;
             this.BTNAGREGARFACTURA.Text = "AGREGAR";
             this.BTNAGREGARFACTURA.UseVisualStyleBackColor = false;
+            this.BTNAGREGARFACTURA.Click += new System.EventHandler(this.BTNAGREGARFACTURA_Click);
             // 
             // BTNMENU
             // 
@@ -553,12 +535,65 @@
             this.textBox2.Size = new System.Drawing.Size(174, 27);
             this.textBox2.TabIndex = 57;
             // 
+            // button18
+            // 
+            this.button18.Location = new System.Drawing.Point(827, 250);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(75, 23);
+            this.button18.TabIndex = 58;
+            this.button18.Text = "Buscar";
+            this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(449, 254);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(50, 15);
+            this.label7.TabIndex = 60;
+            this.label7.Text = "PRECIO";
+            // 
+            // txt_Precio
+            // 
+            this.txt_Precio.BackColor = System.Drawing.SystemColors.Info;
+            this.txt_Precio.Location = new System.Drawing.Point(500, 250);
+            this.txt_Precio.Multiline = true;
+            this.txt_Precio.Name = "txt_Precio";
+            this.txt_Precio.Size = new System.Drawing.Size(84, 35);
+            this.txt_Precio.TabIndex = 59;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(598, 254);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(71, 15);
+            this.label3.TabIndex = 62;
+            this.label3.Text = "CANTIDAD";
+            // 
+            // txt_Cantidad
+            // 
+            this.txt_Cantidad.BackColor = System.Drawing.SystemColors.Info;
+            this.txt_Cantidad.Location = new System.Drawing.Point(675, 250);
+            this.txt_Cantidad.Multiline = true;
+            this.txt_Cantidad.Name = "txt_Cantidad";
+            this.txt_Cantidad.Size = new System.Drawing.Size(84, 35);
+            this.txt_Cantidad.TabIndex = 61;
+            // 
             // IngresarFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Goldenrod;
             this.ClientSize = new System.Drawing.Size(979, 523);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txt_Cantidad);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txt_Precio);
+            this.Controls.Add(this.button18);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -593,12 +628,10 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.BTNINGRESARCLIENTE);
             this.Controls.Add(this.listView1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.TXTIDESCUENTO);
             this.Controls.Add(this.Apellido_cliente);
             this.Controls.Add(this.Nombre_cliente);
-            this.Controls.Add(this.TXT_DESCRIPCION);
-            this.Controls.Add(this.TXT_CODIGO);
+            this.Controls.Add(this.txt_Descripcion);
+            this.Controls.Add(this.txt_Codigo);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "IngresarFactura";
@@ -611,13 +644,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox TXTIDESCUENTO;
         private System.Windows.Forms.Label Apellido_cliente;
         private System.Windows.Forms.Label Nombre_cliente;
-        private System.Windows.Forms.TextBox TXT_DESCRIPCION;
-        private System.Windows.Forms.TextBox TXT_CODIGO;
+        private System.Windows.Forms.TextBox txt_Descripcion;
+        private System.Windows.Forms.TextBox txt_Codigo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button BTNINGRESARCLIENTE;
@@ -639,12 +669,6 @@
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ISV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descuento;
         private System.Windows.Forms.Button BTNAGREGARFACTURA;
         private System.Windows.Forms.Button BTNMENU;
         private System.Windows.Forms.Button BTNCOBRAR;
@@ -659,5 +683,16 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descuento;
+        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txt_Precio;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txt_Cantidad;
     }
 }

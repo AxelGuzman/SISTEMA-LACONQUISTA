@@ -36,7 +36,7 @@ namespace LaConquista_WF
         {
             IngresarFactura ingresarFactura = new IngresarFactura();
             ingresarFactura.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btninventario_Click(object sender, EventArgs e)
