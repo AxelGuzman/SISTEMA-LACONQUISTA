@@ -71,8 +71,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.CBCLIENTEFACTURA = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.button18 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.txt_Precio = new System.Windows.Forms.TextBox();
@@ -516,25 +514,6 @@
             this.label5.TabIndex = 55;
             this.label5.Text = "FECHA";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(617, 47);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 15);
-            this.label6.TabIndex = 56;
-            this.label6.Text = "USUARIO";
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.Info;
-            this.textBox2.Location = new System.Drawing.Point(689, 43);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(174, 27);
-            this.textBox2.TabIndex = 57;
-            // 
             // button18
             // 
             this.button18.Location = new System.Drawing.Point(827, 250);
@@ -594,8 +573,6 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txt_Precio);
             this.Controls.Add(this.button18);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.CBCLIENTEFACTURA);
             this.Controls.Add(this.label4);
@@ -681,8 +658,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox CBCLIENTEFACTURA;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;

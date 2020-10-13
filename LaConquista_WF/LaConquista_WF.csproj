@@ -147,7 +147,11 @@
     </Compile>
     <Compile Include="Helpers\session.cs" />
     <Compile Include="Helpers\Utilidades.cs" />
+    <Compile Include="Models\ListCategoriaViewModels.cs" />
+    <Compile Include="Models\ListClienteViewModels.cs" />
+    <Compile Include="Models\ListProductoViewModels.cs" />
     <Compile Include="Models\Parciales\Proveedores\listProveedores.cs" />
+    <Compile Include="Models\SelectProductoViewModels.cs" />
     <Compile Include="Models\SistemaLaConquistaModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -169,7 +173,7 @@
     <Compile Include="Models\tbCliente.cs">
       <DependentUpon>SistemaLaConquistaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\tbDetallleFactura.cs">
+    <Compile Include="Models\tbDetalleFactura.cs">
       <DependentUpon>SistemaLaConquistaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tbEncabezadoFactura.cs">
@@ -190,6 +194,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SistemaLaConquistaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SistemaLaConquistaDataSet11.Designer.cs">
+      <DependentUpon>SistemaLaConquistaDataSet1.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <EmbeddedResource Include="Formularios\Clientes\AgregarCliente.resx">
       <DependentUpon>AgregarCliente.cs</DependentUpon>
@@ -274,6 +283,17 @@
     </None>
     <None Include="SistemaLaConquistaDataSet.xss">
       <DependentUpon>SistemaLaConquistaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SistemaLaConquistaDataSet1.xsc">
+      <DependentUpon>SistemaLaConquistaDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="SistemaLaConquistaDataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SistemaLaConquistaDataSet11.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="SistemaLaConquistaDataSet1.xss">
+      <DependentUpon>SistemaLaConquistaDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

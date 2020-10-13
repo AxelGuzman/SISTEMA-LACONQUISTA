@@ -16,6 +16,7 @@ namespace LaConquista_WF
         public Menu()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void btncliente_Click(object sender, EventArgs e)
@@ -47,6 +48,11 @@ namespace LaConquista_WF
         private void btnsalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

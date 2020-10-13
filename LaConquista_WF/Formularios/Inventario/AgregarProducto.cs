@@ -39,16 +39,16 @@ namespace LaConquista_WF
                     cbx_Categoria.Text = Convert.ToString(ontbProducto.cprod_Id);
                     cbx_Categoria.Text = ontbProducto.produ_Categoria;
                     cbx_Proveedor.Text = Convert.ToString(ontbProducto.prove_IdProveedor);
-                    byte[] img = (byte[])ontbProducto.produ_Foto;
-                    if(img == null)
-                    {
-                        lbInfImagen.Visible = true;
-                    }
-                    else
-                    {
-                        System.IO.MemoryStream ms = new System.IO.MemoryStream(img);
-                        pictboxFoto.Image = Image.FromStream(ms);
-                    }
+                    //byte[] img = (byte[])ontbProducto.produ_Foto;
+                    //if(img == null)
+                    //{
+                    //    lbInfImagen.Visible = true;
+                    //}
+                    //else
+                    //{
+                    //    System.IO.MemoryStream ms = new System.IO.MemoryStream(img);
+                    //    pictboxFoto.Image = Image.FromStream(ms);
+                    //}
                     
                 }
                 catch(Exception ex)
@@ -120,7 +120,7 @@ namespace LaConquista_WF
                         ontbProducto.UsuarioCrea = 5;
                         System.IO.MemoryStream ms = new System.IO.MemoryStream();
                         pictboxFoto.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                        ontbProducto.produ_Foto = ms.GetBuffer();
+                        //ontbProducto.produ_Foto = ms.GetBuffer();
                         db.tbProducto.Add(ontbProducto);
                         db.SaveChanges();
                         MessageBox.Show("Datos ingresado correctamente!", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -139,7 +139,7 @@ namespace LaConquista_WF
                         ontbProducto.UsuarioModifica = 5;
                         System.IO.MemoryStream ms = new System.IO.MemoryStream();
                         pictboxFoto.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                        ontbProducto.produ_Foto = ms.GetBuffer();
+                        //ontbProducto.produ_Foto = ms.GetBuffer();
                         ontbProducto.FechaModifica = DateTime.Now;
                         db.Entry(ontbProducto).State = System.Data.Entity.EntityState.Modified;
                         db.SaveChanges();

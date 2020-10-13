@@ -37,15 +37,9 @@ C:\Users\DELL\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\obj\Debug\LaCo
 C:\Users\DELL\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\obj\Debug\LaConquista_WF.csproj.CoreCompileInputs.cache
 C:\Users\DELL\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\obj\Debug\LaConquista_WF.exe
 C:\Users\DELL\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\obj\Debug\LaConquista_WF.pdb
-C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\bin\Debug\LaConquista_WF.exe.config
-C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\bin\Debug\LaConquista_WF.exe
-C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\bin\Debug\LaConquista_WF.pdb
-C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\bin\Debug\EntityFramework.dll
-C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\bin\Debug\EntityFramework.xml
-C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\obj\Debug\LaConquista_WF.AgregarCliente.resources
 C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\obj\Debug\LaConquista_WF.Formularios.Factura.ModalCobrar.resources
+C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\obj\Debug\LaConquista_WF.Formularios.Generales.Inhabilitar.resources
 C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\obj\Debug\LaConquista_WF.AgregarProducto.resources
 C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\obj\Debug\LaConquista_WF.AgregarUsuarios.resources
 C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\obj\Debug\LaConquista_WF.IngresarFactura.resources
@@ -55,14 +49,19 @@ C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\obj\Debug
 C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\obj\Debug\LaConquista_WF.Login.resources
 C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\obj\Debug\LaConquista_WF.Menu.resources
 C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\obj\Debug\LaConquista_WF.Formularios.Proveedores.AgregarProveedor.resources
+C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\obj\Debug\LaConquista_WF.Formularios.Proveedores.alterarEstado.resources
+C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\obj\Debug\LaConquista_WF.Formularios.Proveedores.inhabilitar.resources
 C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\obj\Debug\LaConquista_WF.Formularios.Proveedores.ListadoDeProveedores.resources
 C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\obj\Debug\LaConquista_WF.Properties.Resources.resources
 C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\obj\Debug\LaConquista_WF.csproj.GenerateResource.cache
 C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\obj\Debug\LaConquista_WF.csproj.CoreCompileInputs.cache
+C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\bin\Debug\LaConquista_WF.exe.config
+C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\bin\Debug\LaConquista_WF.exe
+C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\bin\Debug\LaConquista_WF.pdb
+C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\bin\Debug\EntityFramework.dll
+C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\bin\Debug\EntityFramework.xml
+C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\obj\Debug\LaConquista_WF.csproj.CopyComplete
 C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\obj\Debug\LaConquista_WF.exe
 C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\obj\Debug\LaConquista_WF.pdb
-C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\obj\Debug\LaConquista_WF.csprojAssemblyReference.cache
-C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\obj\Debug\LaConquista_WF.Formularios.Generales.Inhabilitar.resources
-C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\obj\Debug\LaConquista_WF.Formularios.Proveedores.inhabilitar.resources
-C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\obj\Debug\LaConquista_WF.Formularios.Proveedores.alterarEstado.resources

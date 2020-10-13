@@ -31,7 +31,6 @@ namespace LaConquista_WF.Models
         public Nullable<System.DateTime> FechaModifica { get; set; }
     
         public virtual tbEncabezadoFactura tbEncabezadoFactura { get; set; }
-        public virtual tbEncabezadoFactura tbEncabezadoFactura1 { get; set; }
         public virtual tbProducto tbProducto { get; set; }
         public virtual tbUsuario tbUsuario { get; set; }
         public virtual tbUsuario tbUsuario1 { get; set; }

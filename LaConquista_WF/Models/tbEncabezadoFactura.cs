@@ -18,7 +18,6 @@ namespace LaConquista_WF.Models
         public tbEncabezadoFactura()
         {
             this.tbDetalleFactura = new HashSet<tbDetalleFactura>();
-            this.tbDetalleFactura1 = new HashSet<tbDetalleFactura>();
         }
     
         public int fact_Id { get; set; }
@@ -38,8 +37,6 @@ namespace LaConquista_WF.Models
         public virtual tbCliente tbCliente { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbDetalleFactura> tbDetalleFactura { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbDetalleFactura> tbDetalleFactura1 { get; set; }
         public virtual tbUsuario tbUsuario { get; set; }
         public virtual tbUsuario tbUsuario1 { get; set; }
     }
