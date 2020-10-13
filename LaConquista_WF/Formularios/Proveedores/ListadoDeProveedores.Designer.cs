@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.BTN_INREHABILITAR = new System.Windows.Forms.Button();
             this.BTNINGRESARUSUARIO = new System.Windows.Forms.Button();
@@ -57,24 +56,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.listProveedoresBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(426, 481);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 31);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Eliminar";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // btnEditar
             // 
             this.btnEditar.BackColor = System.Drawing.Color.Black;
             this.btnEditar.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(321, 481);
+            this.btnEditar.Location = new System.Drawing.Point(347, 482);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(100, 31);
             this.btnEditar.TabIndex = 16;
@@ -87,7 +74,7 @@
             this.BTN_INREHABILITAR.BackColor = System.Drawing.Color.Black;
             this.BTN_INREHABILITAR.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTN_INREHABILITAR.ForeColor = System.Drawing.Color.White;
-            this.BTN_INREHABILITAR.Location = new System.Drawing.Point(529, 481);
+            this.BTN_INREHABILITAR.Location = new System.Drawing.Point(453, 482);
             this.BTN_INREHABILITAR.Name = "BTN_INREHABILITAR";
             this.BTN_INREHABILITAR.Size = new System.Drawing.Size(171, 31);
             this.BTN_INREHABILITAR.TabIndex = 15;
@@ -100,7 +87,7 @@
             this.BTNINGRESARUSUARIO.BackColor = System.Drawing.Color.Black;
             this.BTNINGRESARUSUARIO.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTNINGRESARUSUARIO.ForeColor = System.Drawing.Color.White;
-            this.BTNINGRESARUSUARIO.Location = new System.Drawing.Point(215, 481);
+            this.BTNINGRESARUSUARIO.Location = new System.Drawing.Point(241, 482);
             this.BTNINGRESARUSUARIO.Name = "BTNINGRESARUSUARIO";
             this.BTNINGRESARUSUARIO.Size = new System.Drawing.Size(100, 31);
             this.BTNINGRESARUSUARIO.TabIndex = 14;
@@ -120,6 +107,7 @@
             // 
             // dataGridViewProveedores
             // 
+            this.dataGridViewProveedores.AllowUserToOrderColumns = true;
             this.dataGridViewProveedores.AutoGenerateColumns = false;
             this.dataGridViewProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProveedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -248,7 +236,7 @@
             this.button2.BackColor = System.Drawing.Color.Black;
             this.button2.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(704, 481);
+            this.button2.Location = new System.Drawing.Point(630, 482);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 31);
             this.button2.TabIndex = 19;
@@ -263,13 +251,12 @@
             this.ClientSize = new System.Drawing.Size(1002, 549);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridViewProveedores);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.BTN_INREHABILITAR);
             this.Controls.Add(this.BTNINGRESARUSUARIO);
             this.Controls.Add(this.label1);
             this.Name = "ListadoDeProveedores";
-            this.Text = "ListadoDeProveedores";
+            this.Text = " X ";
             this.Load += new System.EventHandler(this.ListadoDeProveedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProveedores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listProveedoresBindingSource2)).EndInit();
@@ -281,8 +268,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button BTN_INREHABILITAR;
         private System.Windows.Forms.Button BTNINGRESARUSUARIO;
