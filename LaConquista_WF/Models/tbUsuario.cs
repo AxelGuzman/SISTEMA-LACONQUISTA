@@ -21,8 +21,8 @@ namespace LaConquista_WF.Models
             this.tbCatalogoProductos1 = new HashSet<tbCatalogoProductos>();
             this.tbCliente = new HashSet<tbCliente>();
             this.tbCliente1 = new HashSet<tbCliente>();
-            this.tbDetallleFactura = new HashSet<tbDetallleFactura>();
-            this.tbDetallleFactura1 = new HashSet<tbDetallleFactura>();
+            this.tbDetalleFactura = new HashSet<tbDetalleFactura>();
+            this.tbDetalleFactura1 = new HashSet<tbDetalleFactura>();
             this.tbEncabezadoFactura = new HashSet<tbEncabezadoFactura>();
             this.tbEncabezadoFactura1 = new HashSet<tbEncabezadoFactura>();
             this.tbProducto = new HashSet<tbProducto>();
@@ -35,10 +35,12 @@ namespace LaConquista_WF.Models
         public string user_Nombre { get; set; }
         public string user_Apellido { get; set; }
         public string user_NombreUsuario { get; set; }
+        public byte[] user_Contraseña { get; set; }
         public Nullable<bool> user_Estado { get; set; }
         public Nullable<System.DateTime> user_FechaCreacion { get; set; }
-        public string user_Contrasenna { get; set; }
     
+        public string user_Contrasenna { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbCatalogoProductos> tbCatalogoProductos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -48,9 +50,9 @@ namespace LaConquista_WF.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbCliente> tbCliente1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbDetallleFactura> tbDetallleFactura { get; set; }
+        public virtual ICollection<tbDetalleFactura> tbDetalleFactura { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbDetallleFactura> tbDetallleFactura1 { get; set; }
+        public virtual ICollection<tbDetalleFactura> tbDetalleFactura1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbEncabezadoFactura> tbEncabezadoFactura { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

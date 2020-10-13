@@ -28,27 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.TELEFONO = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.TXT_PRECIOCOMPRA = new System.Windows.Forms.TextBox();
+            this.txt_PrecioCompra = new System.Windows.Forms.TextBox();
             this.Apellido_cliente = new System.Windows.Forms.Label();
             this.Nombre_cliente = new System.Windows.Forms.Label();
-            this.TXT_DESCRIPCION = new System.Windows.Forms.TextBox();
-            this.TXT_CODIGO = new System.Windows.Forms.TextBox();
+            this.txt_Descripcion = new System.Windows.Forms.TextBox();
+            this.txt_Codigo = new System.Windows.Forms.TextBox();
             this.BTNINGRESARPRODUCTO = new System.Windows.Forms.Button();
             this.BTNSALIRPRODUCTO = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.CBCATEGORIA = new System.Windows.Forms.ComboBox();
+            this.cbx_Categoria = new System.Windows.Forms.ComboBox();
+            this.tbCatalogoProductosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sistemaLaConquistaDataSet1 = new LaConquista_WF.SistemaLaConquistaDataSet1();
             this.label2 = new System.Windows.Forms.Label();
-            this.TXT_PRECIOVENTA = new System.Windows.Forms.TextBox();
-            this.CBPROVEEDOR = new System.Windows.Forms.ComboBox();
+            this.txt_PrecioVenta = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.DT_FECHAINGRESO = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txt_Cantidad = new System.Windows.Forms.TextBox();
+            this.cbx_Proveedor = new System.Windows.Forms.ComboBox();
+            this.tbProveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tbCatalogoProductosTableAdapter = new LaConquista_WF.SistemaLaConquistaDataSet1TableAdapters.tbCatalogoProductosTableAdapter();
+            this.tbProveedorTableAdapter = new LaConquista_WF.SistemaLaConquistaDataSet1TableAdapters.tbProveedorTableAdapter();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.pictboxFoto = new System.Windows.Forms.PictureBox();
+            this.btnImagen = new System.Windows.Forms.Button();
+            this.lbInfImagen = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCatalogoProductosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaLaConquistaDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbProveedorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictboxFoto)).BeginInit();
             this.SuspendLayout();
             // 
             // TELEFONO
@@ -71,14 +82,14 @@
             this.label3.TabIndex = 29;
             this.label3.Text = "PRECIO COMPRA";
             // 
-            // TXT_PRECIOCOMPRA
+            // txt_PrecioCompra
             // 
-            this.TXT_PRECIOCOMPRA.BackColor = System.Drawing.SystemColors.Info;
-            this.TXT_PRECIOCOMPRA.Location = new System.Drawing.Point(143, 140);
-            this.TXT_PRECIOCOMPRA.Multiline = true;
-            this.TXT_PRECIOCOMPRA.Name = "TXT_PRECIOCOMPRA";
-            this.TXT_PRECIOCOMPRA.Size = new System.Drawing.Size(150, 28);
-            this.TXT_PRECIOCOMPRA.TabIndex = 27;
+            this.txt_PrecioCompra.BackColor = System.Drawing.SystemColors.Info;
+            this.txt_PrecioCompra.Location = new System.Drawing.Point(143, 140);
+            this.txt_PrecioCompra.Multiline = true;
+            this.txt_PrecioCompra.Name = "txt_PrecioCompra";
+            this.txt_PrecioCompra.Size = new System.Drawing.Size(150, 28);
+            this.txt_PrecioCompra.TabIndex = 27;
             // 
             // Apellido_cliente
             // 
@@ -100,66 +111,82 @@
             this.Nombre_cliente.TabIndex = 25;
             this.Nombre_cliente.Text = "CÓDIGO";
             // 
-            // TXT_DESCRIPCION
+            // txt_Descripcion
             // 
-            this.TXT_DESCRIPCION.BackColor = System.Drawing.SystemColors.Info;
-            this.TXT_DESCRIPCION.Location = new System.Drawing.Point(143, 98);
-            this.TXT_DESCRIPCION.Multiline = true;
-            this.TXT_DESCRIPCION.Name = "TXT_DESCRIPCION";
-            this.TXT_DESCRIPCION.Size = new System.Drawing.Size(150, 28);
-            this.TXT_DESCRIPCION.TabIndex = 24;
+            this.txt_Descripcion.BackColor = System.Drawing.SystemColors.Info;
+            this.txt_Descripcion.Location = new System.Drawing.Point(143, 98);
+            this.txt_Descripcion.Multiline = true;
+            this.txt_Descripcion.Name = "txt_Descripcion";
+            this.txt_Descripcion.Size = new System.Drawing.Size(150, 28);
+            this.txt_Descripcion.TabIndex = 24;
             // 
-            // TXT_CODIGO
+            // txt_Codigo
             // 
-            this.TXT_CODIGO.BackColor = System.Drawing.SystemColors.Info;
-            this.TXT_CODIGO.Location = new System.Drawing.Point(143, 53);
-            this.TXT_CODIGO.Multiline = true;
-            this.TXT_CODIGO.Name = "TXT_CODIGO";
-            this.TXT_CODIGO.Size = new System.Drawing.Size(150, 28);
-            this.TXT_CODIGO.TabIndex = 23;
+            this.txt_Codigo.BackColor = System.Drawing.SystemColors.Info;
+            this.txt_Codigo.Location = new System.Drawing.Point(143, 53);
+            this.txt_Codigo.Multiline = true;
+            this.txt_Codigo.Name = "txt_Codigo";
+            this.txt_Codigo.Size = new System.Drawing.Size(150, 28);
+            this.txt_Codigo.TabIndex = 23;
             // 
             // BTNINGRESARPRODUCTO
             // 
             this.BTNINGRESARPRODUCTO.BackColor = System.Drawing.Color.Black;
             this.BTNINGRESARPRODUCTO.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTNINGRESARPRODUCTO.ForeColor = System.Drawing.Color.White;
-            this.BTNINGRESARPRODUCTO.Location = new System.Drawing.Point(70, 429);
+            this.BTNINGRESARPRODUCTO.Location = new System.Drawing.Point(69, 371);
             this.BTNINGRESARPRODUCTO.Name = "BTNINGRESARPRODUCTO";
             this.BTNINGRESARPRODUCTO.Size = new System.Drawing.Size(100, 32);
             this.BTNINGRESARPRODUCTO.TabIndex = 22;
-            this.BTNINGRESARPRODUCTO.Text = "INGRESAR";
+            this.BTNINGRESARPRODUCTO.Text = "GUARDAR";
             this.BTNINGRESARPRODUCTO.UseVisualStyleBackColor = false;
+            this.BTNINGRESARPRODUCTO.Click += new System.EventHandler(this.BTNINGRESARPRODUCTO_Click);
             // 
             // BTNSALIRPRODUCTO
             // 
             this.BTNSALIRPRODUCTO.BackColor = System.Drawing.Color.Black;
             this.BTNSALIRPRODUCTO.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTNSALIRPRODUCTO.ForeColor = System.Drawing.Color.White;
-            this.BTNSALIRPRODUCTO.Location = new System.Drawing.Point(243, 429);
+            this.BTNSALIRPRODUCTO.Location = new System.Drawing.Point(242, 371);
             this.BTNSALIRPRODUCTO.Name = "BTNSALIRPRODUCTO";
             this.BTNSALIRPRODUCTO.Size = new System.Drawing.Size(100, 32);
             this.BTNSALIRPRODUCTO.TabIndex = 21;
             this.BTNSALIRPRODUCTO.Text = "SALIR";
             this.BTNSALIRPRODUCTO.UseVisualStyleBackColor = false;
+            this.BTNSALIRPRODUCTO.Click += new System.EventHandler(this.BTNSALIRPRODUCTO_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Ink Free", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(126, 9);
+            this.label1.Location = new System.Drawing.Point(80, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(194, 20);
             this.label1.TabIndex = 20;
             this.label1.Text = "INGRESAR PRODUCTO";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // CBCATEGORIA
+            // cbx_Categoria
             // 
-            this.CBCATEGORIA.FormattingEnabled = true;
-            this.CBCATEGORIA.Location = new System.Drawing.Point(143, 275);
-            this.CBCATEGORIA.Name = "CBCATEGORIA";
-            this.CBCATEGORIA.Size = new System.Drawing.Size(150, 21);
-            this.CBCATEGORIA.TabIndex = 31;
+            this.cbx_Categoria.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.tbCatalogoProductosBindingSource, "cprod_Id", true));
+            this.cbx_Categoria.DataSource = this.tbCatalogoProductosBindingSource;
+            this.cbx_Categoria.DisplayMember = "cprod_Descripcion";
+            this.cbx_Categoria.FormattingEnabled = true;
+            this.cbx_Categoria.Location = new System.Drawing.Point(143, 275);
+            this.cbx_Categoria.Name = "cbx_Categoria";
+            this.cbx_Categoria.Size = new System.Drawing.Size(150, 21);
+            this.cbx_Categoria.TabIndex = 31;
+            this.cbx_Categoria.ValueMember = "cprod_Id";
+            // 
+            // tbCatalogoProductosBindingSource
+            // 
+            this.tbCatalogoProductosBindingSource.DataMember = "tbCatalogoProductos";
+            this.tbCatalogoProductosBindingSource.DataSource = this.sistemaLaConquistaDataSet1;
+            // 
+            // sistemaLaConquistaDataSet1
+            // 
+            this.sistemaLaConquistaDataSet1.DataSetName = "SistemaLaConquistaDataSet1";
+            this.sistemaLaConquistaDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label2
             // 
@@ -171,22 +198,14 @@
             this.label2.TabIndex = 33;
             this.label2.Text = "PRECIO VENTA";
             // 
-            // TXT_PRECIOVENTA
+            // txt_PrecioVenta
             // 
-            this.TXT_PRECIOVENTA.BackColor = System.Drawing.SystemColors.Info;
-            this.TXT_PRECIOVENTA.Location = new System.Drawing.Point(143, 186);
-            this.TXT_PRECIOVENTA.Multiline = true;
-            this.TXT_PRECIOVENTA.Name = "TXT_PRECIOVENTA";
-            this.TXT_PRECIOVENTA.Size = new System.Drawing.Size(150, 28);
-            this.TXT_PRECIOVENTA.TabIndex = 32;
-            // 
-            // CBPROVEEDOR
-            // 
-            this.CBPROVEEDOR.FormattingEnabled = true;
-            this.CBPROVEEDOR.Location = new System.Drawing.Point(143, 313);
-            this.CBPROVEEDOR.Name = "CBPROVEEDOR";
-            this.CBPROVEEDOR.Size = new System.Drawing.Size(150, 21);
-            this.CBPROVEEDOR.TabIndex = 35;
+            this.txt_PrecioVenta.BackColor = System.Drawing.SystemColors.Info;
+            this.txt_PrecioVenta.Location = new System.Drawing.Point(143, 186);
+            this.txt_PrecioVenta.Multiline = true;
+            this.txt_PrecioVenta.Name = "txt_PrecioVenta";
+            this.txt_PrecioVenta.Size = new System.Drawing.Size(150, 28);
+            this.txt_PrecioVenta.TabIndex = 32;
             // 
             // label4
             // 
@@ -198,25 +217,6 @@
             this.label4.TabIndex = 34;
             this.label4.Text = "PROVEEDOR";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(19, 347);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(123, 15);
-            this.label5.TabIndex = 37;
-            this.label5.Text = "FECHA DE INGRESO";
-            // 
-            // DT_FECHAINGRESO
-            // 
-            this.DT_FECHAINGRESO.BackColor = System.Drawing.SystemColors.Info;
-            this.DT_FECHAINGRESO.Location = new System.Drawing.Point(143, 345);
-            this.DT_FECHAINGRESO.Multiline = true;
-            this.DT_FECHAINGRESO.Name = "DT_FECHAINGRESO";
-            this.DT_FECHAINGRESO.Size = new System.Drawing.Size(150, 28);
-            this.DT_FECHAINGRESO.TabIndex = 36;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -227,62 +227,129 @@
             this.label6.TabIndex = 39;
             this.label6.Text = "CANTIDAD";
             // 
-            // textBox1
+            // txt_Cantidad
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Info;
-            this.textBox1.Location = new System.Drawing.Point(143, 226);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 28);
-            this.textBox1.TabIndex = 38;
+            this.txt_Cantidad.BackColor = System.Drawing.SystemColors.Info;
+            this.txt_Cantidad.Location = new System.Drawing.Point(143, 226);
+            this.txt_Cantidad.Multiline = true;
+            this.txt_Cantidad.Name = "txt_Cantidad";
+            this.txt_Cantidad.Size = new System.Drawing.Size(150, 28);
+            this.txt_Cantidad.TabIndex = 38;
             // 
-            // label7
+            // cbx_Proveedor
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(53, 384);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 15);
-            this.label7.TabIndex = 40;
-            this.label7.Text = "ESTADO";
+            this.cbx_Proveedor.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.tbProveedorBindingSource, "prove_IdProveedor", true));
+            this.cbx_Proveedor.DataSource = this.tbProveedorBindingSource;
+            this.cbx_Proveedor.DisplayMember = "prove_Nombre";
+            this.cbx_Proveedor.FormattingEnabled = true;
+            this.cbx_Proveedor.Location = new System.Drawing.Point(143, 313);
+            this.cbx_Proveedor.Name = "cbx_Proveedor";
+            this.cbx_Proveedor.Size = new System.Drawing.Size(150, 21);
+            this.cbx_Proveedor.TabIndex = 35;
+            this.cbx_Proveedor.ValueMember = "prove_IdProveedor";
             // 
-            // comboBox1
+            // tbProveedorBindingSource
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(143, 384);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(150, 21);
-            this.comboBox1.TabIndex = 41;
+            this.tbProveedorBindingSource.DataMember = "tbProveedor";
+            this.tbProveedorBindingSource.DataSource = this.sistemaLaConquistaDataSet1;
+            // 
+            // tbCatalogoProductosTableAdapter
+            // 
+            this.tbCatalogoProductosTableAdapter.ClearBeforeFill = true;
+            // 
+            // tbProveedorTableAdapter
+            // 
+            this.tbProveedorTableAdapter.ClearBeforeFill = true;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(297, 16);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(56, 13);
+            this.linkLabel1.TabIndex = 40;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "[Regresar]";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Location = new System.Drawing.Point(359, 16);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(76, 13);
+            this.linkLabel2.TabIndex = 41;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "[Cerrar Sesión]";
+            // 
+            // pictboxFoto
+            // 
+            this.pictboxFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictboxFoto.Location = new System.Drawing.Point(338, 55);
+            this.pictboxFoto.Name = "pictboxFoto";
+            this.pictboxFoto.Size = new System.Drawing.Size(145, 148);
+            this.pictboxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictboxFoto.TabIndex = 42;
+            this.pictboxFoto.TabStop = false;
+            // 
+            // btnImagen
+            // 
+            this.btnImagen.BackColor = System.Drawing.Color.Black;
+            this.btnImagen.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImagen.ForeColor = System.Drawing.Color.White;
+            this.btnImagen.Location = new System.Drawing.Point(338, 209);
+            this.btnImagen.Name = "btnImagen";
+            this.btnImagen.Size = new System.Drawing.Size(145, 32);
+            this.btnImagen.TabIndex = 43;
+            this.btnImagen.Text = "IMAGEN";
+            this.btnImagen.UseVisualStyleBackColor = false;
+            this.btnImagen.Click += new System.EventHandler(this.btnImagen_Click);
+            // 
+            // lbInfImagen
+            // 
+            this.lbInfImagen.AutoSize = true;
+            this.lbInfImagen.Location = new System.Drawing.Point(364, 118);
+            this.lbInfImagen.Name = "lbInfImagen";
+            this.lbInfImagen.Size = new System.Drawing.Size(106, 13);
+            this.lbInfImagen.TabIndex = 44;
+            this.lbInfImagen.Text = "Agregue una Imagen";
+            this.lbInfImagen.Visible = false;
             // 
             // AgregarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Goldenrod;
-            this.ClientSize = new System.Drawing.Size(402, 473);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label7);
+            this.ClientSize = new System.Drawing.Size(545, 423);
+            this.Controls.Add(this.lbInfImagen);
+            this.Controls.Add(this.btnImagen);
+            this.Controls.Add(this.pictboxFoto);
+            this.Controls.Add(this.linkLabel2);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.DT_FECHAINGRESO);
-            this.Controls.Add(this.CBPROVEEDOR);
+            this.Controls.Add(this.txt_Cantidad);
+            this.Controls.Add(this.cbx_Proveedor);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.TXT_PRECIOVENTA);
-            this.Controls.Add(this.CBCATEGORIA);
+            this.Controls.Add(this.txt_PrecioVenta);
+            this.Controls.Add(this.cbx_Categoria);
             this.Controls.Add(this.TELEFONO);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.TXT_PRECIOCOMPRA);
+            this.Controls.Add(this.txt_PrecioCompra);
             this.Controls.Add(this.Apellido_cliente);
             this.Controls.Add(this.Nombre_cliente);
-            this.Controls.Add(this.TXT_DESCRIPCION);
-            this.Controls.Add(this.TXT_CODIGO);
+            this.Controls.Add(this.txt_Descripcion);
+            this.Controls.Add(this.txt_Codigo);
             this.Controls.Add(this.BTNINGRESARPRODUCTO);
             this.Controls.Add(this.BTNSALIRPRODUCTO);
             this.Controls.Add(this.label1);
             this.Name = "AgregarProducto";
             this.Text = "AgregarProducto";
+            this.Load += new System.EventHandler(this.AgregarProducto_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.tbCatalogoProductosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaLaConquistaDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbProveedorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictboxFoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,24 +358,30 @@
         #endregion
         private System.Windows.Forms.Label TELEFONO;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox TXT_PRECIOCOMPRA;
+        private System.Windows.Forms.TextBox txt_PrecioCompra;
         private System.Windows.Forms.Label Apellido_cliente;
         private System.Windows.Forms.Label Nombre_cliente;
-        private System.Windows.Forms.TextBox TXT_DESCRIPCION;
-        private System.Windows.Forms.TextBox TXT_CODIGO;
+        private System.Windows.Forms.TextBox txt_Descripcion;
+        private System.Windows.Forms.TextBox txt_Codigo;
         private System.Windows.Forms.Button BTNINGRESARPRODUCTO;
         private System.Windows.Forms.Button BTNSALIRPRODUCTO;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox CBCATEGORIA;
+        private System.Windows.Forms.ComboBox cbx_Categoria;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox TXT_PRECIOVENTA;
-        private System.Windows.Forms.ComboBox CBPROVEEDOR;
+        private System.Windows.Forms.TextBox txt_PrecioVenta;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox DT_FECHAINGRESO;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txt_Cantidad;
+        private System.Windows.Forms.ComboBox cbx_Proveedor;
+        private SistemaLaConquistaDataSet1 sistemaLaConquistaDataSet1;
+        private System.Windows.Forms.BindingSource tbCatalogoProductosBindingSource;
+        private SistemaLaConquistaDataSet1TableAdapters.tbCatalogoProductosTableAdapter tbCatalogoProductosTableAdapter;
+        private System.Windows.Forms.BindingSource tbProveedorBindingSource;
+        private SistemaLaConquistaDataSet1TableAdapters.tbProveedorTableAdapter tbProveedorTableAdapter;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.PictureBox pictboxFoto;
+        private System.Windows.Forms.Button btnImagen;
+        private System.Windows.Forms.Label lbInfImagen;
     }
 }

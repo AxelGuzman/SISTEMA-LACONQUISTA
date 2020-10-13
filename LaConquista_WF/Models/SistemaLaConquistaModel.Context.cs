@@ -27,7 +27,7 @@ namespace LaConquista_WF.Models
     
         public virtual DbSet<tbCatalogoProductos> tbCatalogoProductos { get; set; }
         public virtual DbSet<tbCliente> tbCliente { get; set; }
-        public virtual DbSet<tbDetallleFactura> tbDetallleFactura { get; set; }
+        public virtual DbSet<tbDetalleFactura> tbDetalleFactura { get; set; }
         public virtual DbSet<tbEncabezadoFactura> tbEncabezadoFactura { get; set; }
         public virtual DbSet<tbProducto> tbProducto { get; set; }
         public virtual DbSet<tbProveedor> tbProveedor { get; set; }

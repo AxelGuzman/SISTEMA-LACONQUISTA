@@ -33,5 +33,16 @@ namespace LaConquista_WF.Properties {
                 return ((string)(this["SistemaLaConquistaConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-DV11G9M\\JOSHUA;Initial Catalog=SistemaLaConquista;Integrated " +
+            "Security=True")]
+        public string SistemaLaConquistaConnectionString1 {
+            get {
+                return ((string)(this["SistemaLaConquistaConnectionString1"]));
+            }
+        }
     }
 }

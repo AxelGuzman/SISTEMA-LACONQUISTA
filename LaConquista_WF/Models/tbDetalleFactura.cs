@@ -12,7 +12,7 @@ namespace LaConquista_WF.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tbDetallleFactura
+    public partial class tbDetalleFactura
     {
         public int dtfact_Id { get; set; }
         public Nullable<int> fact_Id { get; set; }
@@ -31,6 +31,7 @@ namespace LaConquista_WF.Models
         public Nullable<System.DateTime> FechaModifica { get; set; }
     
         public virtual tbEncabezadoFactura tbEncabezadoFactura { get; set; }
+        public virtual tbEncabezadoFactura tbEncabezadoFactura1 { get; set; }
         public virtual tbProducto tbProducto { get; set; }
         public virtual tbUsuario tbUsuario { get; set; }
         public virtual tbUsuario tbUsuario1 { get; set; }
