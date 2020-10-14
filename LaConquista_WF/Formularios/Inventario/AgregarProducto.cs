@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LaConquista_WF.Helpers;
 using LaConquista_WF.Models;
 
 namespace LaConquista_WF
@@ -23,6 +24,7 @@ namespace LaConquista_WF
             {
                 CargaDatos();
             }
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
         private void CargaDatos()
         {
@@ -66,13 +68,14 @@ namespace LaConquista_WF
 
         private void AgregarProducto_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'sistemaLaConquistaDataSet1.tbProveedor' Puede moverla o quitarla según sea necesario.
+            //aqui se rompe
+            //// TODO: esta línea de código carga datos en la tabla 'sistemaLaConquistaDataSet1.tbProveedor' Puede moverla o quitarla según sea necesario.
+            //this.tbProveedorTableAdapter.Fill(this.sistemaLaConquistaDataSet1.tbProveedor);
             this.tbProveedorTableAdapter.Fill(this.sistemaLaConquistaDataSet1.tbProveedor);
-            // TODO: esta línea de código carga datos en la tabla 'sistemaLaConquistaDataSet1.tbCatalogoProductos' Puede moverla o quitarla según sea necesario.
-            this.tbCatalogoProductosTableAdapter.Fill(this.sistemaLaConquistaDataSet1.tbCatalogoProductos);
-            // TODO: esta línea de código carga datos en la tabla 'sistemaLaConquistaDataSet1.tbCatalogoProductos' Puede moverla o quitarla según sea necesario.
-            this.tbCatalogoProductosTableAdapter.Fill(this.sistemaLaConquistaDataSet1.tbCatalogoProductos);
-
+            //// TODO: esta línea de código carga datos en la tabla 'sistemaLaConquistaDataSet1.tbCatalogoProductos' Puede moverla o quitarla según sea necesario.
+            //this.tbCatalogoProductosTableAdapter.Fill(this.sistemaLaConquistaDataSet1.tbCatalogoProductos);
+            //// TODO: esta línea de código carga datos en la tabla 'sistemaLaConquistaDataSet1.tbCatalogoProductos' Puede moverla o quitarla según sea necesario.
+            //this.tbCatalogoProductosTableAdapter.Fill(this.sistemaLaConquistaDataSet1.tbCatalogoProductos);
         }
 
         private void fillByToolStripButton_Click(object sender, EventArgs e)
@@ -136,7 +139,7 @@ namespace LaConquista_WF
                         ontbProducto.produ_Categoria = cbx_Categoria.Text;
                         ontbProducto.prove_IdProveedor = Convert.ToInt32(cbx_Proveedor.SelectedValue);// cbx_Proveedor.Text;
                         ontbProducto.produ_Estado = true;
-                        ontbProducto.UsuarioModifica = 5;
+                        ontbProducto.UsuarioModifica = session.usuario.user_IdUsuario;
                         System.IO.MemoryStream ms = new System.IO.MemoryStream();
                         pictboxFoto.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
                         //ontbProducto.produ_Foto = ms.GetBuffer();
@@ -163,6 +166,19 @@ namespace LaConquista_WF
             {
                 pictboxFoto.Image = Image.FromFile(fo.FileName);
             }
+        }
+
+        private void consultarProveedoresToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.tbProveedorTableAdapter1.ConsultarProveedores(this.dataSetPrincipal.tbProveedor);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

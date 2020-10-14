@@ -56,10 +56,18 @@
             this.pictboxFoto = new System.Windows.Forms.PictureBox();
             this.btnImagen = new System.Windows.Forms.Button();
             this.lbInfImagen = new System.Windows.Forms.Label();
+            this.dataSetPrincipal = new LaConquista_WF.Models.Dataset.DataSetPrincipal();
+            this.dataSetPrincipalBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tbProveedorTableAdapter1 = new LaConquista_WF.Models.Dataset.DataSetPrincipalTableAdapters.tbProveedorTableAdapter();
+            this.tableAdapterManager = new LaConquista_WF.Models.Dataset.DataSetPrincipalTableAdapters.TableAdapterManager();
+            this.tbProveedorBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tbCatalogoProductosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaLaConquistaDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbProveedorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictboxFoto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetPrincipal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetPrincipalBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbProveedorBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // TELEFONO
@@ -239,7 +247,7 @@
             // cbx_Proveedor
             // 
             this.cbx_Proveedor.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.tbProveedorBindingSource, "prove_IdProveedor", true));
-            this.cbx_Proveedor.DataSource = this.tbProveedorBindingSource;
+            this.cbx_Proveedor.DataSource = this.tbProveedorBindingSource1;
             this.cbx_Proveedor.DisplayMember = "prove_Nombre";
             this.cbx_Proveedor.FormattingEnabled = true;
             this.cbx_Proveedor.Location = new System.Drawing.Point(143, 313);
@@ -315,6 +323,37 @@
             this.lbInfImagen.Text = "Agregue una Imagen";
             this.lbInfImagen.Visible = false;
             // 
+            // dataSetPrincipal
+            // 
+            this.dataSetPrincipal.DataSetName = "DataSetPrincipal";
+            this.dataSetPrincipal.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataSetPrincipalBindingSource
+            // 
+            this.dataSetPrincipalBindingSource.DataSource = this.dataSetPrincipal;
+            this.dataSetPrincipalBindingSource.Position = 0;
+            // 
+            // tbProveedorTableAdapter1
+            // 
+            this.tbProveedorTableAdapter1.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.tbCatalogoProductosTableAdapter = null;
+            this.tableAdapterManager.tbClienteTableAdapter = null;
+            this.tableAdapterManager.tbDetalleFacturaTableAdapter = null;
+            this.tableAdapterManager.tbEncabezadoFacturaTableAdapter = null;
+            this.tableAdapterManager.tbProductoTableAdapter = null;
+            this.tableAdapterManager.tbProveedorTableAdapter = this.tbProveedorTableAdapter1;
+            this.tableAdapterManager.tbUsuarioTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = LaConquista_WF.Models.Dataset.DataSetPrincipalTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // tbProveedorBindingSource1
+            // 
+            this.tbProveedorBindingSource1.DataMember = "tbProveedor";
+            this.tbProveedorBindingSource1.DataSource = this.dataSetPrincipalBindingSource;
+            // 
             // AgregarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -350,6 +389,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.sistemaLaConquistaDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbProveedorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictboxFoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetPrincipal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetPrincipalBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbProveedorBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -383,5 +425,10 @@
         private System.Windows.Forms.PictureBox pictboxFoto;
         private System.Windows.Forms.Button btnImagen;
         private System.Windows.Forms.Label lbInfImagen;
+        private Models.Dataset.DataSetPrincipal dataSetPrincipal;
+        private System.Windows.Forms.BindingSource dataSetPrincipalBindingSource;
+        private Models.Dataset.DataSetPrincipalTableAdapters.tbProveedorTableAdapter tbProveedorTableAdapter1;
+        private Models.Dataset.DataSetPrincipalTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.BindingSource tbProveedorBindingSource1;
     }
 }

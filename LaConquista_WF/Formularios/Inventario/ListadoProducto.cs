@@ -22,6 +22,7 @@ namespace LaConquista_WF
         {
             dataGridView1.Refresh();
             DisplayProducto();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
         public void DisplayProducto()
         {

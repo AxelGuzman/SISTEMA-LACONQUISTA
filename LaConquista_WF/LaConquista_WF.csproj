@@ -41,7 +41,9 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -147,6 +149,12 @@
     </Compile>
     <Compile Include="Helpers\session.cs" />
     <Compile Include="Helpers\Utilidades.cs" />
+    <Compile Include="Models\Dataset\DataSetPrincipal.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPrincipal.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Facturas\ListFacturaViewModels.cs" />
     <Compile Include="Models\ListCategoriaViewModels.cs" />
     <Compile Include="Models\ListClienteViewModels.cs" />
     <Compile Include="Models\ListProductoViewModels.cs" />
@@ -250,10 +258,22 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Factura.rdlc" />
     <EntityDeploy Include="Models\SistemaLaConquistaModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SistemaLaConquistaModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="Models\Dataset\DataSetPrincipal.xsc">
+      <DependentUpon>DataSetPrincipal.xsd</DependentUpon>
+    </None>
+    <None Include="Models\Dataset\DataSetPrincipal.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPrincipal.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Models\Dataset\DataSetPrincipal.xss">
+      <DependentUpon>DataSetPrincipal.xsd</DependentUpon>
+    </None>
     <None Include="Models\SistemaLaConquistaModel.edmx.diagram">
       <DependentUpon>SistemaLaConquistaModel.edmx</DependentUpon>
     </None>
