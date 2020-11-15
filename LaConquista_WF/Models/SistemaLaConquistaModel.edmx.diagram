@@ -4,14 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="dca2a6d2fd8b4319ac41746a69430406" Name="Diagram1" ZoomLevel="82">
-        <EntityTypeShape EntityType="SistemaLaConquistaModel.tbCatalogoProductos" Width="1.5" PointX="5.25" PointY="11.25" />
-        <EntityTypeShape EntityType="SistemaLaConquistaModel.tbCliente" Width="1.5" PointX="3" PointY="4.625" />
-        <EntityTypeShape EntityType="SistemaLaConquistaModel.tbDetalleFactura" Width="1.5" PointX="9.75" PointY="7.75" />
-        <EntityTypeShape EntityType="SistemaLaConquistaModel.tbEncabezadoFactura" Width="1.5" PointX="5.25" PointY="5.875" />
-        <EntityTypeShape EntityType="SistemaLaConquistaModel.tbProducto" Width="1.5" PointX="7.5" PointY="9.375" />
-        <EntityTypeShape EntityType="SistemaLaConquistaModel.tbProveedor" Width="1.5" PointX="3" PointY="13.375" />
-        <EntityTypeShape EntityType="SistemaLaConquistaModel.tbUsuario" Width="1.5" PointX="0.75" PointY="6.625" />
+      <Diagram DiagramId="dca2a6d2fd8b4319ac41746a69430406" Name="Diagram1" ZoomLevel="34">
+        <EntityTypeShape EntityType="SistemaLaConquistaModel.tbCatalogoProductos" Width="1.5" PointX="5.25" PointY="13.125" />
+        <EntityTypeShape EntityType="SistemaLaConquistaModel.tbCliente" Width="1.5" PointX="3" PointY="6.75" />
+        <EntityTypeShape EntityType="SistemaLaConquistaModel.tbDetalleFactura" Width="1.5" PointX="9.75" PointY="10" />
+        <EntityTypeShape EntityType="SistemaLaConquistaModel.tbEncabezadoFactura" Width="1.5" PointX="5.25" PointY="8.125" />
+        <EntityTypeShape EntityType="SistemaLaConquistaModel.tbHistoricoMovimientoInventario" Width="1.5" PointX="15" PointY="9.25" />
+        <EntityTypeShape EntityType="SistemaLaConquistaModel.tbInventarioProductos" Width="1.5" PointX="12.75" PointY="10.625" />
+        <EntityTypeShape EntityType="SistemaLaConquistaModel.tbProducto" Width="1.5" PointX="7.5" PointY="11.125" />
+        <EntityTypeShape EntityType="SistemaLaConquistaModel.tbProveedor" Width="1.5" PointX="3" PointY="15.375" />
+        <EntityTypeShape EntityType="SistemaLaConquistaModel.tbUsuario" Width="1.5" PointX="0.75" PointY="8.25" />
+        <EntityTypeShape EntityType="SistemaLaConquistaModel.tipoMovimientoInventario" Width="1.5" PointX="12.75" PointY="7.25" />
         <AssociationConnector Association="SistemaLaConquistaModel.FK_tbCatalogoProductos_tbProducto_cprod_Id" />
         <AssociationConnector Association="SistemaLaConquistaModel.FK_tbProveedor_tbCatalogoProductos_prove_IdProveedor" />
         <AssociationConnector Association="SistemaLaConquistaModel.FK_tbUsuarios_tbCatalogoProductos_UsuarioCrea" />
@@ -25,6 +28,13 @@
         <AssociationConnector Association="SistemaLaConquistaModel.FK_tbUsuarios_tbDetallleFactura_UsuarioCrea" />
         <AssociationConnector Association="SistemaLaConquistaModel.FK_tbUsuarios_tbEncabezadoFactura_UsuarioCrea" />
         <AssociationConnector Association="SistemaLaConquistaModel.FK_tbUsuarios_tbEncabezadoFactura_UsuarioModifica" />
+        <AssociationConnector Association="SistemaLaConquistaModel.FK__tbHistori__invp___3864608B" />
+        <AssociationConnector Association="SistemaLaConquistaModel.FK__tbHistori__tminv__37703C52" />
+        <AssociationConnector Association="SistemaLaConquistaModel.FK__tbHistori__Usuar__3D2915A8" />
+        <AssociationConnector Association="SistemaLaConquistaModel.FK__tbHistori__Usuar__3E1D39E1" />
+        <AssociationConnector Association="SistemaLaConquistaModel.FK__tbInventa__produ__2FCF1A8A" />
+        <AssociationConnector Association="SistemaLaConquistaModel.FK__tbInventa__Usuar__339FAB6E" />
+        <AssociationConnector Association="SistemaLaConquistaModel.FK__tbInventa__Usuar__3493CFA7" />
         <AssociationConnector Association="SistemaLaConquistaModel.FK_prove_IdProveedor_tbProducto_prove_IdProveedor" />
         <AssociationConnector Association="SistemaLaConquistaModel.FK_tbUsuarios_tbProducto_UsuarioCrea" />
         <AssociationConnector Association="SistemaLaConquistaModel.FK_tbUsuarios_tbProducto_UsuarioModifica" />

@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LaConquista_WF.Helpers;
 using LaConquista_WF.Models;
+using LaConquista_WF.Models.Parciales.Proveedores;
+using static LaConquista_WF.Helpers.Utilidades;
 
 namespace LaConquista_WF
 {
@@ -68,15 +70,77 @@ namespace LaConquista_WF
 
         private void AgregarProducto_Load(object sender, EventArgs e)
         {
-            //aqui se rompe
-            //// TODO: esta línea de código carga datos en la tabla 'sistemaLaConquistaDataSet1.tbProveedor' Puede moverla o quitarla según sea necesario.
-            //this.tbProveedorTableAdapter.Fill(this.sistemaLaConquistaDataSet1.tbProveedor);
-            this.tbProveedorTableAdapter.Fill(this.sistemaLaConquistaDataSet1.tbProveedor);
-            //// TODO: esta línea de código carga datos en la tabla 'sistemaLaConquistaDataSet1.tbCatalogoProductos' Puede moverla o quitarla según sea necesario.
-            //this.tbCatalogoProductosTableAdapter.Fill(this.sistemaLaConquistaDataSet1.tbCatalogoProductos);
-            //// TODO: esta línea de código carga datos en la tabla 'sistemaLaConquistaDataSet1.tbCatalogoProductos' Puede moverla o quitarla según sea necesario.
-            //this.tbCatalogoProductosTableAdapter.Fill(this.sistemaLaConquistaDataSet1.tbCatalogoProductos);
+            try
+            {
+                using (SistemaLaConquistaEntities db = new SistemaLaConquistaEntities())
+                {
+                    cbx_Categoria.DropDownStyle = ComboBoxStyle.DropDownList;
+                    cbx_Proveedor.DropDownStyle = ComboBoxStyle.DropDownList;
+
+                    ComboboxItem prv = new ComboboxItem();
+                    List<ComboboxItem> ListProveedor = new List<ComboboxItem>();
+
+                    var descripciones = db.tbProveedor.Where(x => x.provee_Estado == true).Select(y => new listProveedores
+                    {
+                        id = y.prove_IdProveedor,
+                        Nombre = y.prove_Nombre + " " + y.prove_Apellido
+                    }).ToList();
+
+                    prv.Value = 0;
+                    prv.Text = "--Seleccione--";
+                    ListProveedor.Add(prv);
+
+                    descripciones.ForEach(y =>
+                    {
+                        prv = new ComboboxItem();
+                        prv.Value = y.id;
+                        prv.Text = y.Nombre;
+                        ListProveedor.Add(prv);
+                    });
+                    
+                    this.cbx_Proveedor.DisplayMember = "Text";
+                    this.cbx_Proveedor.ValueMember = "Value";
+                    this.cbx_Proveedor.DataSource = ListProveedor;
+
+                    //categorias
+
+                    var categorias = db.tbCatalogoProductos.Where(x => x.cprod_Estado == true).Select(y => new listProveedores
+                    {
+                        id = y.cprod_Id,
+                        Nombre = y.cprod_Descripcion
+                    }).ToList();
+
+                    prv = new ComboboxItem();
+                    List<ComboboxItem> ListCategorias = new List<ComboboxItem>();
+
+
+                    prv.Value = 0;
+                    prv.Text = "--Seleccione--";
+                    ListCategorias.Add(prv);
+
+                    categorias.ForEach(y =>
+                    {
+                        prv = new ComboboxItem();
+                        prv.Value = y.id;
+                        prv.Text = y.Nombre;
+                        ListCategorias.Add(prv);
+                    });
+
+                    this.cbx_Categoria.DisplayMember = "Text";
+                    this.cbx_Categoria.ValueMember = "Value";
+                    this.cbx_Categoria.DataSource = ListCategorias;
+
+
+                    cbx_Proveedor.SelectedIndex = 0;
+                    cbx_Categoria.SelectedIndex = 0;
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
         }
+
 
         private void fillByToolStripButton_Click(object sender, EventArgs e)
         {
@@ -115,12 +179,18 @@ namespace LaConquista_WF
                         ontbProducto.produ_PrecioCompra = Convert.ToDecimal(txt_PrecioCompra.Text);
                         ontbProducto.produ_PrecioVenta = Convert.ToDecimal(txt_PrecioVenta.Text);
                         ontbProducto.produ_Cantidad = Convert.ToDecimal(txt_Cantidad.Text);
-                        ontbProducto.cprod_Id = Convert.ToInt32(cbx_Categoria.SelectedValue);
+                        
+                        var p11 = cbx_Proveedor.SelectedItem.ToString();// ted
+                        var p12 = cbx_Proveedor.SelectedText.ToString();// ted
+
+
+                        ontbProducto.prove_IdProveedor = Convert.ToInt32(cbx_Proveedor.SelectedValue);
                         ontbProducto.produ_Categoria = cbx_Categoria.Text;
-                        ontbProducto.prove_IdProveedor = Convert.ToInt32(cbx_Proveedor.SelectedValue);// cbx_Proveedor.Text;
+
+
                         ontbProducto.produ_Estado = true;
                         ontbProducto.FechaCrea = DateTime.Now;
-                        ontbProducto.UsuarioCrea = 5;
+                        ontbProducto.UsuarioCrea = session.usuario.user_IdUsuario;
                         System.IO.MemoryStream ms = new System.IO.MemoryStream();
                         pictboxFoto.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
                         //ontbProducto.produ_Foto = ms.GetBuffer();

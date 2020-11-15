@@ -26,7 +26,7 @@
           <Property Name="clint_Nombre" Type="nvarchar" MaxLength="200" />
           <Property Name="clint_Apellido" Type="nvarchar" MaxLength="200" />
           <Property Name="clint_Identificacion" Type="nvarchar" MaxLength="14" />
-          <Property Name="clint_Telefono" Type="nvarchar" MaxLength="10" />
+          <Property Name="clint_Telefono" Type="nvarchar" MaxLength="20" />
           <Property Name="clint_Direccion" Type="nvarchar" MaxLength="200" />
           <Property Name="clint_Correo" Type="nvarchar" MaxLength="200" />
           <Property Name="clint_Estado" Type="bit" />
@@ -46,7 +46,6 @@
           <Property Name="defact_CantidadProducto" Type="decimal" Precision="18" Scale="2" />
           <Property Name="defact_PrecioProducto" Type="decimal" Precision="18" Scale="2" />
           <Property Name="defact_Subtotal" Type="decimal" Precision="18" Scale="2" />
-          <Property Name="defact_Isv" Type="decimal" Precision="18" Scale="2" />
           <Property Name="defact_Descuento" Type="decimal" Precision="18" Scale="2" />
           <Property Name="defact_Total" Type="decimal" Precision="18" Scale="2" />
           <Property Name="defact_Estado" Type="bit" />
@@ -65,9 +64,36 @@
           <Property Name="efact_FechaFacturacion" Type="datetime" />
           <Property Name="efact_Subtotal" Type="decimal" Precision="18" Scale="2" />
           <Property Name="efact_Isv" Type="decimal" Precision="18" Scale="2" />
-          <Property Name="efact_Descuento" Type="decimal" Precision="18" Scale="2" />
           <Property Name="efact_Total" Type="decimal" Precision="18" Scale="4" />
           <Property Name="efact_Estado" Type="bit" />
+          <Property Name="UsuarioCrea" Type="int" Nullable="false" />
+          <Property Name="FechaCrea" Type="datetime" Nullable="false" />
+          <Property Name="UsuarioModifica" Type="int" />
+          <Property Name="FechaModifica" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbHistoricoMovimientoInventario">
+          <Key>
+            <PropertyRef Name="hmovinv_Id" />
+          </Key>
+          <Property Name="hmovinv_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tminv_Id" Type="int" Nullable="false" />
+          <Property Name="invp_Id" Type="int" Nullable="false" />
+          <Property Name="hmovinv_qtity" Type="int" Nullable="false" />
+          <Property Name="hmovinv_Stock" Type="int" Nullable="false" />
+          <Property Name="hmovinv_Estado" Type="bit" />
+          <Property Name="UsuarioCrea" Type="int" Nullable="false" />
+          <Property Name="FechaCrea" Type="datetime" Nullable="false" />
+          <Property Name="UsuarioModifica" Type="int" />
+          <Property Name="FechaModifica" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbInventarioProductos">
+          <Key>
+            <PropertyRef Name="invp_Id" />
+          </Key>
+          <Property Name="invp_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="produ_IdProducto" Type="int" />
+          <Property Name="invp_Stock" Type="int" Nullable="false" />
+          <Property Name="invp_Estado" Type="bit" />
           <Property Name="UsuarioCrea" Type="int" Nullable="false" />
           <Property Name="FechaCrea" Type="datetime" Nullable="false" />
           <Property Name="UsuarioModifica" Type="int" />
@@ -122,6 +148,98 @@
           <Property Name="user_FechaCreacion" Type="datetime" />
           <Property Name="user_Contrasenna" Type="nvarchar" MaxLength="200" />
         </EntityType>
+        <EntityType Name="tipoMovimientoInventario">
+          <Key>
+            <PropertyRef Name="tminv_Id" />
+          </Key>
+          <Property Name="tminv_Id" Type="int" Nullable="false" />
+          <Property Name="tminv_Descripcion" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="tminv_Estado" Type="bit" />
+        </EntityType>
+        <Association Name="FK__tbHistori__invp___3864608B">
+          <End Role="tbInventarioProductos" Type="Self.tbInventarioProductos" Multiplicity="1" />
+          <End Role="tbHistoricoMovimientoInventario" Type="Self.tbHistoricoMovimientoInventario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbInventarioProductos">
+              <PropertyRef Name="invp_Id" />
+            </Principal>
+            <Dependent Role="tbHistoricoMovimientoInventario">
+              <PropertyRef Name="invp_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tbHistori__tminv__37703C52">
+          <End Role="tipoMovimientoInventario" Type="Self.tipoMovimientoInventario" Multiplicity="1" />
+          <End Role="tbHistoricoMovimientoInventario" Type="Self.tbHistoricoMovimientoInventario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipoMovimientoInventario">
+              <PropertyRef Name="tminv_Id" />
+            </Principal>
+            <Dependent Role="tbHistoricoMovimientoInventario">
+              <PropertyRef Name="tminv_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tbHistori__Usuar__3D2915A8">
+          <End Role="tbUsuario" Type="Self.tbUsuario" Multiplicity="1" />
+          <End Role="tbHistoricoMovimientoInventario" Type="Self.tbHistoricoMovimientoInventario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbUsuario">
+              <PropertyRef Name="user_IdUsuario" />
+            </Principal>
+            <Dependent Role="tbHistoricoMovimientoInventario">
+              <PropertyRef Name="UsuarioCrea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tbHistori__Usuar__3E1D39E1">
+          <End Role="tbUsuario" Type="Self.tbUsuario" Multiplicity="0..1" />
+          <End Role="tbHistoricoMovimientoInventario" Type="Self.tbHistoricoMovimientoInventario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbUsuario">
+              <PropertyRef Name="user_IdUsuario" />
+            </Principal>
+            <Dependent Role="tbHistoricoMovimientoInventario">
+              <PropertyRef Name="UsuarioModifica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tbInventa__produ__2FCF1A8A">
+          <End Role="tbProducto" Type="Self.tbProducto" Multiplicity="0..1" />
+          <End Role="tbInventarioProductos" Type="Self.tbInventarioProductos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbProducto">
+              <PropertyRef Name="produ_IdProducto" />
+            </Principal>
+            <Dependent Role="tbInventarioProductos">
+              <PropertyRef Name="produ_IdProducto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tbInventa__Usuar__339FAB6E">
+          <End Role="tbUsuario" Type="Self.tbUsuario" Multiplicity="1" />
+          <End Role="tbInventarioProductos" Type="Self.tbInventarioProductos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbUsuario">
+              <PropertyRef Name="user_IdUsuario" />
+            </Principal>
+            <Dependent Role="tbInventarioProductos">
+              <PropertyRef Name="UsuarioCrea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tbInventa__Usuar__3493CFA7">
+          <End Role="tbUsuario" Type="Self.tbUsuario" Multiplicity="0..1" />
+          <End Role="tbInventarioProductos" Type="Self.tbInventarioProductos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbUsuario">
+              <PropertyRef Name="user_IdUsuario" />
+            </Principal>
+            <Dependent Role="tbInventarioProductos">
+              <PropertyRef Name="UsuarioModifica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_prove_IdProveedor_tbProducto_prove_IdProveedor">
           <End Role="tbProveedor" Type="Self.tbProveedor" Multiplicity="0..1" />
           <End Role="tbProducto" Type="Self.tbProducto" Multiplicity="*" />
@@ -343,9 +461,40 @@
           <EntitySet Name="tbCliente" EntityType="Self.tbCliente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbDetalleFactura" EntityType="Self.tbDetalleFactura" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbEncabezadoFactura" EntityType="Self.tbEncabezadoFactura" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbHistoricoMovimientoInventario" EntityType="Self.tbHistoricoMovimientoInventario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbInventarioProductos" EntityType="Self.tbInventarioProductos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbProducto" EntityType="Self.tbProducto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbProveedor" EntityType="Self.tbProveedor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbUsuario" EntityType="Self.tbUsuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tipoMovimientoInventario" EntityType="Self.tipoMovimientoInventario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__tbHistori__invp___3864608B" Association="Self.FK__tbHistori__invp___3864608B">
+            <End Role="tbInventarioProductos" EntitySet="tbInventarioProductos" />
+            <End Role="tbHistoricoMovimientoInventario" EntitySet="tbHistoricoMovimientoInventario" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tbHistori__tminv__37703C52" Association="Self.FK__tbHistori__tminv__37703C52">
+            <End Role="tipoMovimientoInventario" EntitySet="tipoMovimientoInventario" />
+            <End Role="tbHistoricoMovimientoInventario" EntitySet="tbHistoricoMovimientoInventario" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tbHistori__Usuar__3D2915A8" Association="Self.FK__tbHistori__Usuar__3D2915A8">
+            <End Role="tbUsuario" EntitySet="tbUsuario" />
+            <End Role="tbHistoricoMovimientoInventario" EntitySet="tbHistoricoMovimientoInventario" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tbHistori__Usuar__3E1D39E1" Association="Self.FK__tbHistori__Usuar__3E1D39E1">
+            <End Role="tbUsuario" EntitySet="tbUsuario" />
+            <End Role="tbHistoricoMovimientoInventario" EntitySet="tbHistoricoMovimientoInventario" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tbInventa__produ__2FCF1A8A" Association="Self.FK__tbInventa__produ__2FCF1A8A">
+            <End Role="tbProducto" EntitySet="tbProducto" />
+            <End Role="tbInventarioProductos" EntitySet="tbInventarioProductos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tbInventa__Usuar__339FAB6E" Association="Self.FK__tbInventa__Usuar__339FAB6E">
+            <End Role="tbUsuario" EntitySet="tbUsuario" />
+            <End Role="tbInventarioProductos" EntitySet="tbInventarioProductos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tbInventa__Usuar__3493CFA7" Association="Self.FK__tbInventa__Usuar__3493CFA7">
+            <End Role="tbUsuario" EntitySet="tbUsuario" />
+            <End Role="tbInventarioProductos" EntitySet="tbInventarioProductos" />
+          </AssociationSet>
           <AssociationSet Name="FK_prove_IdProveedor_tbProducto_prove_IdProveedor" Association="Self.FK_prove_IdProveedor_tbProducto_prove_IdProveedor">
             <End Role="tbProveedor" EntitySet="tbProveedor" />
             <End Role="tbProducto" EntitySet="tbProducto" />
@@ -428,9 +577,12 @@
           <EntitySet Name="tbCliente" EntityType="SistemaLaConquistaModel.tbCliente" />
           <EntitySet Name="tbDetalleFactura" EntityType="SistemaLaConquistaModel.tbDetalleFactura" />
           <EntitySet Name="tbEncabezadoFactura" EntityType="SistemaLaConquistaModel.tbEncabezadoFactura" />
+          <EntitySet Name="tbHistoricoMovimientoInventario" EntityType="SistemaLaConquistaModel.tbHistoricoMovimientoInventario" />
+          <EntitySet Name="tbInventarioProductos" EntityType="SistemaLaConquistaModel.tbInventarioProductos" />
           <EntitySet Name="tbProducto" EntityType="SistemaLaConquistaModel.tbProducto" />
           <EntitySet Name="tbProveedor" EntityType="SistemaLaConquistaModel.tbProveedor" />
           <EntitySet Name="tbUsuario" EntityType="SistemaLaConquistaModel.tbUsuario" />
+          <EntitySet Name="tipoMovimientoInventario" EntityType="SistemaLaConquistaModel.tipoMovimientoInventario" />
           <AssociationSet Name="FK_tbCatalogoProductos_tbProducto_cprod_Id" Association="SistemaLaConquistaModel.FK_tbCatalogoProductos_tbProducto_cprod_Id">
             <End Role="tbCatalogoProductos" EntitySet="tbCatalogoProductos" />
             <End Role="tbProducto" EntitySet="tbProducto" />
@@ -483,6 +635,34 @@
             <End Role="tbUsuario" EntitySet="tbUsuario" />
             <End Role="tbEncabezadoFactura" EntitySet="tbEncabezadoFactura" />
           </AssociationSet>
+          <AssociationSet Name="FK__tbHistori__invp___3864608B" Association="SistemaLaConquistaModel.FK__tbHistori__invp___3864608B">
+            <End Role="tbInventarioProductos" EntitySet="tbInventarioProductos" />
+            <End Role="tbHistoricoMovimientoInventario" EntitySet="tbHistoricoMovimientoInventario" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tbHistori__tminv__37703C52" Association="SistemaLaConquistaModel.FK__tbHistori__tminv__37703C52">
+            <End Role="tipoMovimientoInventario" EntitySet="tipoMovimientoInventario" />
+            <End Role="tbHistoricoMovimientoInventario" EntitySet="tbHistoricoMovimientoInventario" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tbHistori__Usuar__3D2915A8" Association="SistemaLaConquistaModel.FK__tbHistori__Usuar__3D2915A8">
+            <End Role="tbUsuario" EntitySet="tbUsuario" />
+            <End Role="tbHistoricoMovimientoInventario" EntitySet="tbHistoricoMovimientoInventario" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tbHistori__Usuar__3E1D39E1" Association="SistemaLaConquistaModel.FK__tbHistori__Usuar__3E1D39E1">
+            <End Role="tbUsuario" EntitySet="tbUsuario" />
+            <End Role="tbHistoricoMovimientoInventario" EntitySet="tbHistoricoMovimientoInventario" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tbInventa__produ__2FCF1A8A" Association="SistemaLaConquistaModel.FK__tbInventa__produ__2FCF1A8A">
+            <End Role="tbProducto" EntitySet="tbProducto" />
+            <End Role="tbInventarioProductos" EntitySet="tbInventarioProductos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tbInventa__Usuar__339FAB6E" Association="SistemaLaConquistaModel.FK__tbInventa__Usuar__339FAB6E">
+            <End Role="tbUsuario" EntitySet="tbUsuario" />
+            <End Role="tbInventarioProductos" EntitySet="tbInventarioProductos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tbInventa__Usuar__3493CFA7" Association="SistemaLaConquistaModel.FK__tbInventa__Usuar__3493CFA7">
+            <End Role="tbUsuario" EntitySet="tbUsuario" />
+            <End Role="tbInventarioProductos" EntitySet="tbInventarioProductos" />
+          </AssociationSet>
           <AssociationSet Name="FK_prove_IdProveedor_tbProducto_prove_IdProveedor" Association="SistemaLaConquistaModel.FK_prove_IdProveedor_tbProducto_prove_IdProveedor">
             <End Role="tbProveedor" EntitySet="tbProveedor" />
             <End Role="tbProducto" EntitySet="tbProducto" />
@@ -529,7 +709,7 @@
           <Property Name="clint_Nombre" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="clint_Apellido" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="clint_Identificacion" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
-          <Property Name="clint_Telefono" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="clint_Telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="clint_Direccion" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="clint_Correo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="clint_Estado" Type="Boolean" />
@@ -552,7 +732,6 @@
           <Property Name="defact_CantidadProducto" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="defact_PrecioProducto" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="defact_Subtotal" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="defact_Isv" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="defact_Descuento" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="defact_Total" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="defact_Estado" Type="Boolean" />
@@ -575,7 +754,6 @@
           <Property Name="efact_FechaFacturacion" Type="DateTime" Precision="3" />
           <Property Name="efact_Subtotal" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="efact_Isv" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="efact_Descuento" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="efact_Total" Type="Decimal" Precision="18" Scale="4" />
           <Property Name="efact_Estado" Type="Boolean" />
           <Property Name="UsuarioCrea" Type="Int32" Nullable="false" />
@@ -586,6 +764,42 @@
           <NavigationProperty Name="tbDetalleFactura" Relationship="SistemaLaConquistaModel.FK_tbEncabezadoFactura_tbDetalleFactura_fact_Id" FromRole="tbEncabezadoFactura" ToRole="tbDetalleFactura" />
           <NavigationProperty Name="tbUsuario" Relationship="SistemaLaConquistaModel.FK_tbUsuarios_tbEncabezadoFactura_UsuarioCrea" FromRole="tbEncabezadoFactura" ToRole="tbUsuario" />
           <NavigationProperty Name="tbUsuario1" Relationship="SistemaLaConquistaModel.FK_tbUsuarios_tbEncabezadoFactura_UsuarioModifica" FromRole="tbEncabezadoFactura" ToRole="tbUsuario" />
+        </EntityType>
+        <EntityType Name="tbHistoricoMovimientoInventario">
+          <Key>
+            <PropertyRef Name="hmovinv_Id" />
+          </Key>
+          <Property Name="hmovinv_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tminv_Id" Type="Int32" Nullable="false" />
+          <Property Name="invp_Id" Type="Int32" Nullable="false" />
+          <Property Name="hmovinv_qtity" Type="Int32" Nullable="false" />
+          <Property Name="hmovinv_Stock" Type="Int32" Nullable="false" />
+          <Property Name="hmovinv_Estado" Type="Boolean" />
+          <Property Name="UsuarioCrea" Type="Int32" Nullable="false" />
+          <Property Name="FechaCrea" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UsuarioModifica" Type="Int32" />
+          <Property Name="FechaModifica" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbInventarioProductos" Relationship="SistemaLaConquistaModel.FK__tbHistori__invp___3864608B" FromRole="tbHistoricoMovimientoInventario" ToRole="tbInventarioProductos" />
+          <NavigationProperty Name="tipoMovimientoInventario" Relationship="SistemaLaConquistaModel.FK__tbHistori__tminv__37703C52" FromRole="tbHistoricoMovimientoInventario" ToRole="tipoMovimientoInventario" />
+          <NavigationProperty Name="tbUsuario" Relationship="SistemaLaConquistaModel.FK__tbHistori__Usuar__3D2915A8" FromRole="tbHistoricoMovimientoInventario" ToRole="tbUsuario" />
+          <NavigationProperty Name="tbUsuario1" Relationship="SistemaLaConquistaModel.FK__tbHistori__Usuar__3E1D39E1" FromRole="tbHistoricoMovimientoInventario" ToRole="tbUsuario" />
+        </EntityType>
+        <EntityType Name="tbInventarioProductos">
+          <Key>
+            <PropertyRef Name="invp_Id" />
+          </Key>
+          <Property Name="invp_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="produ_IdProducto" Type="Int32" />
+          <Property Name="invp_Stock" Type="Int32" Nullable="false" />
+          <Property Name="invp_Estado" Type="Boolean" />
+          <Property Name="UsuarioCrea" Type="Int32" Nullable="false" />
+          <Property Name="FechaCrea" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UsuarioModifica" Type="Int32" />
+          <Property Name="FechaModifica" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbHistoricoMovimientoInventario" Relationship="SistemaLaConquistaModel.FK__tbHistori__invp___3864608B" FromRole="tbInventarioProductos" ToRole="tbHistoricoMovimientoInventario" />
+          <NavigationProperty Name="tbProducto" Relationship="SistemaLaConquistaModel.FK__tbInventa__produ__2FCF1A8A" FromRole="tbInventarioProductos" ToRole="tbProducto" />
+          <NavigationProperty Name="tbUsuario" Relationship="SistemaLaConquistaModel.FK__tbInventa__Usuar__339FAB6E" FromRole="tbInventarioProductos" ToRole="tbUsuario" />
+          <NavigationProperty Name="tbUsuario1" Relationship="SistemaLaConquistaModel.FK__tbInventa__Usuar__3493CFA7" FromRole="tbInventarioProductos" ToRole="tbUsuario" />
         </EntityType>
         <EntityType Name="tbProducto">
           <Key>
@@ -609,6 +823,7 @@
           <Property Name="FechaModifica" Type="DateTime" Precision="3" />
           <NavigationProperty Name="tbCatalogoProductos" Relationship="SistemaLaConquistaModel.FK_tbCatalogoProductos_tbProducto_cprod_Id" FromRole="tbProducto" ToRole="tbCatalogoProductos" />
           <NavigationProperty Name="tbDetalleFactura" Relationship="SistemaLaConquistaModel.FK_tbProducto_tbDetalleFactura_produ_IdProducto" FromRole="tbProducto" ToRole="tbDetalleFactura" />
+          <NavigationProperty Name="tbInventarioProductos" Relationship="SistemaLaConquistaModel.FK__tbInventa__produ__2FCF1A8A" FromRole="tbProducto" ToRole="tbInventarioProductos" />
           <NavigationProperty Name="tbProveedor" Relationship="SistemaLaConquistaModel.FK_prove_IdProveedor_tbProducto_prove_IdProveedor" FromRole="tbProducto" ToRole="tbProveedor" />
           <NavigationProperty Name="tbUsuario" Relationship="SistemaLaConquistaModel.FK_tbUsuarios_tbProducto_UsuarioCrea" FromRole="tbProducto" ToRole="tbUsuario" />
           <NavigationProperty Name="tbUsuario1" Relationship="SistemaLaConquistaModel.FK_tbUsuarios_tbProducto_UsuarioModifica" FromRole="tbProducto" ToRole="tbUsuario" />
@@ -652,10 +867,23 @@
           <NavigationProperty Name="tbDetalleFactura1" Relationship="SistemaLaConquistaModel.FK_tbUsuarios_tbDetallleFactura_UsuarioCrea" FromRole="tbUsuario" ToRole="tbDetalleFactura" />
           <NavigationProperty Name="tbEncabezadoFactura" Relationship="SistemaLaConquistaModel.FK_tbUsuarios_tbEncabezadoFactura_UsuarioCrea" FromRole="tbUsuario" ToRole="tbEncabezadoFactura" />
           <NavigationProperty Name="tbEncabezadoFactura1" Relationship="SistemaLaConquistaModel.FK_tbUsuarios_tbEncabezadoFactura_UsuarioModifica" FromRole="tbUsuario" ToRole="tbEncabezadoFactura" />
+          <NavigationProperty Name="tbHistoricoMovimientoInventario" Relationship="SistemaLaConquistaModel.FK__tbHistori__Usuar__3D2915A8" FromRole="tbUsuario" ToRole="tbHistoricoMovimientoInventario" />
+          <NavigationProperty Name="tbHistoricoMovimientoInventario1" Relationship="SistemaLaConquistaModel.FK__tbHistori__Usuar__3E1D39E1" FromRole="tbUsuario" ToRole="tbHistoricoMovimientoInventario" />
+          <NavigationProperty Name="tbInventarioProductos" Relationship="SistemaLaConquistaModel.FK__tbInventa__Usuar__339FAB6E" FromRole="tbUsuario" ToRole="tbInventarioProductos" />
+          <NavigationProperty Name="tbInventarioProductos1" Relationship="SistemaLaConquistaModel.FK__tbInventa__Usuar__3493CFA7" FromRole="tbUsuario" ToRole="tbInventarioProductos" />
           <NavigationProperty Name="tbProducto" Relationship="SistemaLaConquistaModel.FK_tbUsuarios_tbProducto_UsuarioCrea" FromRole="tbUsuario" ToRole="tbProducto" />
           <NavigationProperty Name="tbProducto1" Relationship="SistemaLaConquistaModel.FK_tbUsuarios_tbProducto_UsuarioModifica" FromRole="tbUsuario" ToRole="tbProducto" />
           <NavigationProperty Name="tbProveedor" Relationship="SistemaLaConquistaModel.FK_tbUsuarios_tbProveedor_UsuarioCrea" FromRole="tbUsuario" ToRole="tbProveedor" />
           <NavigationProperty Name="tbProveedor1" Relationship="SistemaLaConquistaModel.FK_tbUsuarios_tbProveedor_UsuarioModifica" FromRole="tbUsuario" ToRole="tbProveedor" />
+        </EntityType>
+        <EntityType Name="tipoMovimientoInventario">
+          <Key>
+            <PropertyRef Name="tminv_Id" />
+          </Key>
+          <Property Name="tminv_Id" Type="Int32" Nullable="false" />
+          <Property Name="tminv_Descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="tminv_Estado" Type="Boolean" />
+          <NavigationProperty Name="tbHistoricoMovimientoInventario" Relationship="SistemaLaConquistaModel.FK__tbHistori__tminv__37703C52" FromRole="tipoMovimientoInventario" ToRole="tbHistoricoMovimientoInventario" />
         </EntityType>
         <Association Name="FK_tbCatalogoProductos_tbProducto_cprod_Id">
           <End Type="SistemaLaConquistaModel.tbCatalogoProductos" Role="tbCatalogoProductos" Multiplicity="0..1" />
@@ -813,6 +1041,90 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__tbHistori__invp___3864608B">
+          <End Type="SistemaLaConquistaModel.tbInventarioProductos" Role="tbInventarioProductos" Multiplicity="1" />
+          <End Type="SistemaLaConquistaModel.tbHistoricoMovimientoInventario" Role="tbHistoricoMovimientoInventario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbInventarioProductos">
+              <PropertyRef Name="invp_Id" />
+            </Principal>
+            <Dependent Role="tbHistoricoMovimientoInventario">
+              <PropertyRef Name="invp_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tbHistori__tminv__37703C52">
+          <End Type="SistemaLaConquistaModel.tipoMovimientoInventario" Role="tipoMovimientoInventario" Multiplicity="1" />
+          <End Type="SistemaLaConquistaModel.tbHistoricoMovimientoInventario" Role="tbHistoricoMovimientoInventario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipoMovimientoInventario">
+              <PropertyRef Name="tminv_Id" />
+            </Principal>
+            <Dependent Role="tbHistoricoMovimientoInventario">
+              <PropertyRef Name="tminv_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tbHistori__Usuar__3D2915A8">
+          <End Type="SistemaLaConquistaModel.tbUsuario" Role="tbUsuario" Multiplicity="1" />
+          <End Type="SistemaLaConquistaModel.tbHistoricoMovimientoInventario" Role="tbHistoricoMovimientoInventario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbUsuario">
+              <PropertyRef Name="user_IdUsuario" />
+            </Principal>
+            <Dependent Role="tbHistoricoMovimientoInventario">
+              <PropertyRef Name="UsuarioCrea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tbHistori__Usuar__3E1D39E1">
+          <End Type="SistemaLaConquistaModel.tbUsuario" Role="tbUsuario" Multiplicity="0..1" />
+          <End Type="SistemaLaConquistaModel.tbHistoricoMovimientoInventario" Role="tbHistoricoMovimientoInventario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbUsuario">
+              <PropertyRef Name="user_IdUsuario" />
+            </Principal>
+            <Dependent Role="tbHistoricoMovimientoInventario">
+              <PropertyRef Name="UsuarioModifica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tbInventa__produ__2FCF1A8A">
+          <End Type="SistemaLaConquistaModel.tbProducto" Role="tbProducto" Multiplicity="0..1" />
+          <End Type="SistemaLaConquistaModel.tbInventarioProductos" Role="tbInventarioProductos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbProducto">
+              <PropertyRef Name="produ_IdProducto" />
+            </Principal>
+            <Dependent Role="tbInventarioProductos">
+              <PropertyRef Name="produ_IdProducto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tbInventa__Usuar__339FAB6E">
+          <End Type="SistemaLaConquistaModel.tbUsuario" Role="tbUsuario" Multiplicity="1" />
+          <End Type="SistemaLaConquistaModel.tbInventarioProductos" Role="tbInventarioProductos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbUsuario">
+              <PropertyRef Name="user_IdUsuario" />
+            </Principal>
+            <Dependent Role="tbInventarioProductos">
+              <PropertyRef Name="UsuarioCrea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tbInventa__Usuar__3493CFA7">
+          <End Type="SistemaLaConquistaModel.tbUsuario" Role="tbUsuario" Multiplicity="0..1" />
+          <End Type="SistemaLaConquistaModel.tbInventarioProductos" Role="tbInventarioProductos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbUsuario">
+              <PropertyRef Name="user_IdUsuario" />
+            </Principal>
+            <Dependent Role="tbInventarioProductos">
+              <PropertyRef Name="UsuarioModifica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_prove_IdProveedor_tbProducto_prove_IdProveedor">
           <End Type="SistemaLaConquistaModel.tbProveedor" Role="tbProveedor" Multiplicity="0..1" />
           <End Type="SistemaLaConquistaModel.tbProducto" Role="tbProducto" Multiplicity="*" />
@@ -921,7 +1233,6 @@
                 <ScalarProperty Name="defact_Estado" ColumnName="defact_Estado" />
                 <ScalarProperty Name="defact_Total" ColumnName="defact_Total" />
                 <ScalarProperty Name="defact_Descuento" ColumnName="defact_Descuento" />
-                <ScalarProperty Name="defact_Isv" ColumnName="defact_Isv" />
                 <ScalarProperty Name="defact_Subtotal" ColumnName="defact_Subtotal" />
                 <ScalarProperty Name="defact_PrecioProducto" ColumnName="defact_PrecioProducto" />
                 <ScalarProperty Name="defact_CantidadProducto" ColumnName="defact_CantidadProducto" />
@@ -941,13 +1252,42 @@
                 <ScalarProperty Name="UsuarioCrea" ColumnName="UsuarioCrea" />
                 <ScalarProperty Name="efact_Estado" ColumnName="efact_Estado" />
                 <ScalarProperty Name="efact_Total" ColumnName="efact_Total" />
-                <ScalarProperty Name="efact_Descuento" ColumnName="efact_Descuento" />
                 <ScalarProperty Name="efact_Isv" ColumnName="efact_Isv" />
                 <ScalarProperty Name="efact_Subtotal" ColumnName="efact_Subtotal" />
                 <ScalarProperty Name="efact_FechaFacturacion" ColumnName="efact_FechaFacturacion" />
                 <ScalarProperty Name="efact_CodigoFactura" ColumnName="efact_CodigoFactura" />
                 <ScalarProperty Name="clint_IdCliente" ColumnName="clint_IdCliente" />
                 <ScalarProperty Name="fact_Id" ColumnName="fact_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbHistoricoMovimientoInventario">
+            <EntityTypeMapping TypeName="SistemaLaConquistaModel.tbHistoricoMovimientoInventario">
+              <MappingFragment StoreEntitySet="tbHistoricoMovimientoInventario">
+                <ScalarProperty Name="FechaModifica" ColumnName="FechaModifica" />
+                <ScalarProperty Name="UsuarioModifica" ColumnName="UsuarioModifica" />
+                <ScalarProperty Name="FechaCrea" ColumnName="FechaCrea" />
+                <ScalarProperty Name="UsuarioCrea" ColumnName="UsuarioCrea" />
+                <ScalarProperty Name="hmovinv_Estado" ColumnName="hmovinv_Estado" />
+                <ScalarProperty Name="hmovinv_Stock" ColumnName="hmovinv_Stock" />
+                <ScalarProperty Name="hmovinv_qtity" ColumnName="hmovinv_qtity" />
+                <ScalarProperty Name="invp_Id" ColumnName="invp_Id" />
+                <ScalarProperty Name="tminv_Id" ColumnName="tminv_Id" />
+                <ScalarProperty Name="hmovinv_Id" ColumnName="hmovinv_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbInventarioProductos">
+            <EntityTypeMapping TypeName="SistemaLaConquistaModel.tbInventarioProductos">
+              <MappingFragment StoreEntitySet="tbInventarioProductos">
+                <ScalarProperty Name="FechaModifica" ColumnName="FechaModifica" />
+                <ScalarProperty Name="UsuarioModifica" ColumnName="UsuarioModifica" />
+                <ScalarProperty Name="FechaCrea" ColumnName="FechaCrea" />
+                <ScalarProperty Name="UsuarioCrea" ColumnName="UsuarioCrea" />
+                <ScalarProperty Name="invp_Estado" ColumnName="invp_Estado" />
+                <ScalarProperty Name="invp_Stock" ColumnName="invp_Stock" />
+                <ScalarProperty Name="produ_IdProducto" ColumnName="produ_IdProducto" />
+                <ScalarProperty Name="invp_Id" ColumnName="invp_Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1000,6 +1340,15 @@
                 <ScalarProperty Name="user_Apellido" ColumnName="user_Apellido" />
                 <ScalarProperty Name="user_Nombre" ColumnName="user_Nombre" />
                 <ScalarProperty Name="user_IdUsuario" ColumnName="user_IdUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tipoMovimientoInventario">
+            <EntityTypeMapping TypeName="SistemaLaConquistaModel.tipoMovimientoInventario">
+              <MappingFragment StoreEntitySet="tipoMovimientoInventario">
+                <ScalarProperty Name="tminv_Estado" ColumnName="tminv_Estado" />
+                <ScalarProperty Name="tminv_Descripcion" ColumnName="tminv_Descripcion" />
+                <ScalarProperty Name="tminv_Id" ColumnName="tminv_Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

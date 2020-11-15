@@ -25,6 +25,10 @@ namespace LaConquista_WF.Models
             this.tbDetalleFactura1 = new HashSet<tbDetalleFactura>();
             this.tbEncabezadoFactura = new HashSet<tbEncabezadoFactura>();
             this.tbEncabezadoFactura1 = new HashSet<tbEncabezadoFactura>();
+            this.tbHistoricoMovimientoInventario = new HashSet<tbHistoricoMovimientoInventario>();
+            this.tbHistoricoMovimientoInventario1 = new HashSet<tbHistoricoMovimientoInventario>();
+            this.tbInventarioProductos = new HashSet<tbInventarioProductos>();
+            this.tbInventarioProductos1 = new HashSet<tbInventarioProductos>();
             this.tbProducto = new HashSet<tbProducto>();
             this.tbProducto1 = new HashSet<tbProducto>();
             this.tbProveedor = new HashSet<tbProveedor>();
@@ -55,6 +59,14 @@ namespace LaConquista_WF.Models
         public virtual ICollection<tbEncabezadoFactura> tbEncabezadoFactura { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbEncabezadoFactura> tbEncabezadoFactura1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tbHistoricoMovimientoInventario> tbHistoricoMovimientoInventario { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tbHistoricoMovimientoInventario> tbHistoricoMovimientoInventario1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tbInventarioProductos> tbInventarioProductos { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tbInventarioProductos> tbInventarioProductos1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbProducto> tbProducto { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

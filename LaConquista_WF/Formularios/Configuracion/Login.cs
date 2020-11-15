@@ -24,7 +24,8 @@ namespace LaConquista_WF
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            TXT_USUARIO.Text = "Asdf";
+            TXT_CLAVE.Text = "Asdf";
         }
 
         private void button1_Click(object sender, EventArgs e)

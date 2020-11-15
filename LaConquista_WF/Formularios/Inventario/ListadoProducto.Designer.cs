@@ -41,7 +41,7 @@
             this.BTNSALIRPRODUCTO.BackColor = System.Drawing.Color.Black;
             this.BTNSALIRPRODUCTO.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTNSALIRPRODUCTO.ForeColor = System.Drawing.Color.White;
-            this.BTNSALIRPRODUCTO.Location = new System.Drawing.Point(483, 273);
+            this.BTNSALIRPRODUCTO.Location = new System.Drawing.Point(669, 273);
             this.BTNSALIRPRODUCTO.Name = "BTNSALIRPRODUCTO";
             this.BTNSALIRPRODUCTO.Size = new System.Drawing.Size(100, 32);
             this.BTNSALIRPRODUCTO.TabIndex = 9;
@@ -54,7 +54,7 @@
             this.btbINGRESARPRODUCTO.BackColor = System.Drawing.Color.Black;
             this.btbINGRESARPRODUCTO.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btbINGRESARPRODUCTO.ForeColor = System.Drawing.Color.White;
-            this.btbINGRESARPRODUCTO.Location = new System.Drawing.Point(37, 273);
+            this.btbINGRESARPRODUCTO.Location = new System.Drawing.Point(54, 273);
             this.btbINGRESARPRODUCTO.Name = "btbINGRESARPRODUCTO";
             this.btbINGRESARPRODUCTO.Size = new System.Drawing.Size(100, 32);
             this.btbINGRESARPRODUCTO.TabIndex = 8;
@@ -66,7 +66,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Ink Free", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(165, 29);
+            this.label1.Location = new System.Drawing.Point(306, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(219, 20);
             this.label1.TabIndex = 7;
@@ -75,12 +75,12 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 71);
+            this.dataGridView1.Location = new System.Drawing.Point(54, 68);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(594, 184);
+            this.dataGridView1.Size = new System.Drawing.Size(715, 184);
             this.dataGridView1.TabIndex = 10;
             // 
             // btnEditar
@@ -88,7 +88,7 @@
             this.btnEditar.BackColor = System.Drawing.Color.Black;
             this.btnEditar.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(154, 273);
+            this.btnEditar.Location = new System.Drawing.Point(224, 273);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(100, 32);
             this.btnEditar.TabIndex = 11;
@@ -101,7 +101,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Goldenrod;
-            this.ClientSize = new System.Drawing.Size(622, 332);
+            this.ClientSize = new System.Drawing.Size(820, 332);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.BTNSALIRPRODUCTO);

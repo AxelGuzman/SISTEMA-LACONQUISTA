@@ -43,7 +43,6 @@
           <ScalarProperty Name="defact_Estado" ColumnName="defact_Estado" />
           <ScalarProperty Name="defact_Total" ColumnName="defact_Total" />
           <ScalarProperty Name="defact_Descuento" ColumnName="defact_Descuento" />
-          <ScalarProperty Name="defact_Isv" ColumnName="defact_Isv" />
           <ScalarProperty Name="defact_Subtotal" ColumnName="defact_Subtotal" />
           <ScalarProperty Name="defact_PrecioProducto" ColumnName="defact_PrecioProducto" />
           <ScalarProperty Name="defact_CantidadProducto" ColumnName="defact_CantidadProducto" />
@@ -63,13 +62,42 @@
           <ScalarProperty Name="UsuarioCrea" ColumnName="UsuarioCrea" />
           <ScalarProperty Name="efact_Estado" ColumnName="efact_Estado" />
           <ScalarProperty Name="efact_Total" ColumnName="efact_Total" />
-          <ScalarProperty Name="efact_Descuento" ColumnName="efact_Descuento" />
           <ScalarProperty Name="efact_Isv" ColumnName="efact_Isv" />
           <ScalarProperty Name="efact_Subtotal" ColumnName="efact_Subtotal" />
           <ScalarProperty Name="efact_FechaFacturacion" ColumnName="efact_FechaFacturacion" />
           <ScalarProperty Name="efact_CodigoFactura" ColumnName="efact_CodigoFactura" />
           <ScalarProperty Name="clint_IdCliente" ColumnName="clint_IdCliente" />
           <ScalarProperty Name="fact_Id" ColumnName="fact_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbHistoricoMovimientoInventario">
+      <EntityTypeMapping TypeName="SistemaLaConquistaModel.tbHistoricoMovimientoInventario">
+        <MappingFragment StoreEntitySet="tbHistoricoMovimientoInventario">
+          <ScalarProperty Name="FechaModifica" ColumnName="FechaModifica" />
+          <ScalarProperty Name="UsuarioModifica" ColumnName="UsuarioModifica" />
+          <ScalarProperty Name="FechaCrea" ColumnName="FechaCrea" />
+          <ScalarProperty Name="UsuarioCrea" ColumnName="UsuarioCrea" />
+          <ScalarProperty Name="hmovinv_Estado" ColumnName="hmovinv_Estado" />
+          <ScalarProperty Name="hmovinv_Stock" ColumnName="hmovinv_Stock" />
+          <ScalarProperty Name="hmovinv_qtity" ColumnName="hmovinv_qtity" />
+          <ScalarProperty Name="invp_Id" ColumnName="invp_Id" />
+          <ScalarProperty Name="tminv_Id" ColumnName="tminv_Id" />
+          <ScalarProperty Name="hmovinv_Id" ColumnName="hmovinv_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbInventarioProductos">
+      <EntityTypeMapping TypeName="SistemaLaConquistaModel.tbInventarioProductos">
+        <MappingFragment StoreEntitySet="tbInventarioProductos">
+          <ScalarProperty Name="FechaModifica" ColumnName="FechaModifica" />
+          <ScalarProperty Name="UsuarioModifica" ColumnName="UsuarioModifica" />
+          <ScalarProperty Name="FechaCrea" ColumnName="FechaCrea" />
+          <ScalarProperty Name="UsuarioCrea" ColumnName="UsuarioCrea" />
+          <ScalarProperty Name="invp_Estado" ColumnName="invp_Estado" />
+          <ScalarProperty Name="invp_Stock" ColumnName="invp_Stock" />
+          <ScalarProperty Name="produ_IdProducto" ColumnName="produ_IdProducto" />
+          <ScalarProperty Name="invp_Id" ColumnName="invp_Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -122,6 +150,15 @@
           <ScalarProperty Name="user_Apellido" ColumnName="user_Apellido" />
           <ScalarProperty Name="user_Nombre" ColumnName="user_Nombre" />
           <ScalarProperty Name="user_IdUsuario" ColumnName="user_IdUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipoMovimientoInventario">
+      <EntityTypeMapping TypeName="SistemaLaConquistaModel.tipoMovimientoInventario">
+        <MappingFragment StoreEntitySet="tipoMovimientoInventario">
+          <ScalarProperty Name="tminv_Estado" ColumnName="tminv_Estado" />
+          <ScalarProperty Name="tminv_Descripcion" ColumnName="tminv_Descripcion" />
+          <ScalarProperty Name="tminv_Id" ColumnName="tminv_Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -67,4 +67,3 @@ C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\obj\Debug
 C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\obj\Debug\LaConquista_WF.csproj.CopyComplete
 C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\obj\Debug\LaConquista_WF.exe
 C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\obj\Debug\LaConquista_WF.pdb
-C:\Users\Axel Omar\Documents\GitHub\SISTEMA-LACONQUISTA\LaConquista_WF\obj\Debug\LaConquista_WF.csprojAssemblyReference.cache

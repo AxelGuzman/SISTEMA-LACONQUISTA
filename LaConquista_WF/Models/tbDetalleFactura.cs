@@ -21,7 +21,6 @@ namespace LaConquista_WF.Models
         public Nullable<decimal> defact_CantidadProducto { get; set; }
         public Nullable<decimal> defact_PrecioProducto { get; set; }
         public Nullable<decimal> defact_Subtotal { get; set; }
-        public Nullable<decimal> defact_Isv { get; set; }
         public Nullable<decimal> defact_Descuento { get; set; }
         public Nullable<decimal> defact_Total { get; set; }
         public Nullable<bool> defact_Estado { get; set; }

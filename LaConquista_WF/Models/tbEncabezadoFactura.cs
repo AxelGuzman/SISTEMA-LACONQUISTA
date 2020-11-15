@@ -26,7 +26,6 @@ namespace LaConquista_WF.Models
         public Nullable<System.DateTime> efact_FechaFacturacion { get; set; }
         public Nullable<decimal> efact_Subtotal { get; set; }
         public Nullable<decimal> efact_Isv { get; set; }
-        public Nullable<decimal> efact_Descuento { get; set; }
         public Nullable<decimal> efact_Total { get; set; }
         public Nullable<bool> efact_Estado { get; set; }
         public int UsuarioCrea { get; set; }

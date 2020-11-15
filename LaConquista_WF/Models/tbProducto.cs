@@ -18,6 +18,7 @@ namespace LaConquista_WF.Models
         public tbProducto()
         {
             this.tbDetalleFactura = new HashSet<tbDetalleFactura>();
+            this.tbInventarioProductos = new HashSet<tbInventarioProductos>();
         }
     
         public int produ_IdProducto { get; set; }
@@ -40,6 +41,8 @@ namespace LaConquista_WF.Models
         public virtual tbCatalogoProductos tbCatalogoProductos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbDetalleFactura> tbDetalleFactura { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tbInventarioProductos> tbInventarioProductos { get; set; }
         public virtual tbProveedor tbProveedor { get; set; }
         public virtual tbUsuario tbUsuario { get; set; }
         public virtual tbUsuario tbUsuario1 { get; set; }

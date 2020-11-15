@@ -187,6 +187,12 @@
     <Compile Include="Models\tbEncabezadoFactura.cs">
       <DependentUpon>SistemaLaConquistaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\tbHistoricoMovimientoInventario.cs">
+      <DependentUpon>SistemaLaConquistaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbInventarioProductos.cs">
+      <DependentUpon>SistemaLaConquistaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\tbProducto.cs">
       <DependentUpon>SistemaLaConquistaModel.tt</DependentUpon>
     </Compile>
@@ -194,6 +200,9 @@
       <DependentUpon>SistemaLaConquistaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tbUsuario.cs">
+      <DependentUpon>SistemaLaConquistaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tipoMovimientoInventario.cs">
       <DependentUpon>SistemaLaConquistaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -320,6 +329,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Reporteria\" />
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>

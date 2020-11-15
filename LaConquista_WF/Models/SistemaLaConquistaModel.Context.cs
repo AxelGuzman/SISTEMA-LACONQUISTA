@@ -29,8 +29,11 @@ namespace LaConquista_WF.Models
         public virtual DbSet<tbCliente> tbCliente { get; set; }
         public virtual DbSet<tbDetalleFactura> tbDetalleFactura { get; set; }
         public virtual DbSet<tbEncabezadoFactura> tbEncabezadoFactura { get; set; }
+        public virtual DbSet<tbHistoricoMovimientoInventario> tbHistoricoMovimientoInventario { get; set; }
+        public virtual DbSet<tbInventarioProductos> tbInventarioProductos { get; set; }
         public virtual DbSet<tbProducto> tbProducto { get; set; }
         public virtual DbSet<tbProveedor> tbProveedor { get; set; }
         public virtual DbSet<tbUsuario> tbUsuario { get; set; }
+        public virtual DbSet<tipoMovimientoInventario> tipoMovimientoInventario { get; set; }
     }
 }

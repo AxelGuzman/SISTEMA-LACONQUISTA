@@ -16,6 +16,7 @@ namespace LaConquista_WF
         public ListadoProducto()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void ListadoProducto_Load(object sender, EventArgs e)
@@ -36,7 +37,7 @@ namespace LaConquista_WF
                     Descripcion = x.produ_Descripcion,
                     PrecioCompra = x.produ_PrecioCompra,
                     PrecioVenta = x.produ_PrecioVenta,
-                    Categoria = x.tbCatalogoProductos.cprod_Descripcion,
+                    Categoria = x.produ_Categoria,
                     CantidadDisponible = x.produ_Cantidad
                 }).ToList();
                 dataGridView1.DataSource = listaProducto;
