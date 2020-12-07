@@ -81,6 +81,7 @@
             this.nmr_totalFactura = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.nmrupdwnisv = new System.Windows.Forms.NumericUpDown();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductosFactura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmr_Cantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmr_Descuento)).BeginInit();
@@ -631,6 +632,10 @@
             this.nmrupdwnisv.Size = new System.Drawing.Size(66, 22);
             this.nmrupdwnisv.TabIndex = 70;
             // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.Imprime);
+            // 
             // IngresarFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -751,5 +756,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalProducto;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown nmrupdwnisv;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }
